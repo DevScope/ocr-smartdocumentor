@@ -22,13 +22,32 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
 
 ## How-To Install:
 Pre-requisite:
-- [Node.js](https://nodejs.org/) version 10.14.1 or higher
-- [.NET Core SDK](https://www.microsoft.com/net/download) version 2.1.403 or higher
+- Microsoft .NET Framework 4.6.1
+- Microsoft Visual C++ 2013 Runtime Libraries
+- Microsoft Visual C++ 2015 Runtime Libraries
 
-```
-npm install -g chatdown msbot ludown luis-apis qnamaker botdispatch luisgen
-```
-
+Firewall and Antivirus Exclusions:
+- Application installation path (by default C:\Program Files (x86)\DevScope\SmartDocumentor)
+- Application configuration path (check SmartDocumentor ServiceConfig.exe file)
+- Application installation logs (by default c:\temp\logs)
+- User application data (%appdata%\Devscope)
+- Applications installed on the application installation path (by default C:\Program Files (x86)\DevScope\SmartDocumentor)
+  - SmartDocumentor.ScanStation.exe
+  - SmartDocumentor.Scanner.Console.exe
+  - SmartDocumentor.ManagementStation.exe
+  - SmartDocumentor.ServiceConfig.exe
+  - SmartDocumentor.TemplateEditor.exe
+  - SmartDocumentor.ReviewStation.exe
+  - SmartDocumentor.ProcessStation.Service.exe
+  - SmartDocumentor.ProcessStation.Console.exe
+  
+Local Admin Access (Read/Write):
+- SmartDocumentor ProcessStation Service
+- Application installation path (by default C:\Program Files (x86)\DevScope\SmartDocumentor)
+- Application configuration path (check SmartDocumentor ServiceConfig.exe file)
+- Application installation logs (by default c:\temp\logs)
+- Registry (64 bit machine)
+  - HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\DevScope
 
 
 ## Reporting Security Issues
