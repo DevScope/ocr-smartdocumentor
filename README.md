@@ -27,6 +27,7 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
 - Microsoft Visual C++ 2013 Runtime Libraries
 - Microsoft Visual C++ 2015 Runtime Libraries
 
+
 **Firewall and Antivirus Exclusions:**
 
 - Application installation path (by default C:\Program Files (x86)\DevScope\SmartDocumentor)
@@ -43,6 +44,7 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
   - SmartDocumentor.ProcessStation.Service.exe
   - SmartDocumentor.ProcessStation.Console.exe
   
+  
 **Local Admin Access (Read/Write):**
 
 - SmartDocumentor ProcessStation Service
@@ -51,6 +53,7 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
 - Application installation logs (by default c:\temp\logs)
 - Registry (64 bit machine)
   - HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\DevScope
+  
 
 **Database**
 
@@ -60,6 +63,7 @@ SmartDocumentor can work with SQL Server database providers. To use this type of
 - Create a user with db owner permissions on the created database
 
 In the SmartDocumentor.ServiceConfig.exe application you need to configure the provider for the created database
+
 
 **Twain or ISIS Driver:**
 
