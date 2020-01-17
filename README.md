@@ -1,5 +1,5 @@
 
-# ![SmartDocumentor Tools](./docs/media/smartDocumentor.png)
+# ![SmartDocumentor Tools](./docs/media/smartdocumentor.png)
 
 ### [Click here to find out what's new](https://www.smartdocumentor.net)
 
