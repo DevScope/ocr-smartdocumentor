@@ -34,4 +34,4 @@ npm install -g chatdown msbot ludown luis-apis qnamaker botdispatch luisgen
 ## Reporting Security Issues
 Security issues and bugs should be reported privately, via email, to the DevScope Support Team at [support@devscope.net](mailto:support@devscope.net). You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. 
 
-Copyright (c)DevScope. All rights reserved.
+Copyright (c) DevScope. All rights reserved.
