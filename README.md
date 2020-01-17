@@ -58,9 +58,9 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
 **Database**
 
 SmartDocumentor can work with SQL Server database providers. To use this type of provider you will need to have:
-- SQL Server 2012 Standard Edition or higher installed
+- SQL Server 2014 Standard Edition or higher installed
 - Create a database (for example SmartDocumentor)
-- Create a user with db owner permissions on the created database
+- Create a user with permissions to read/write on the created database
 
 In the SmartDocumentor.ServiceConfig.exe application you need to configure the provider for the created database
 
