@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Storage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StorageList>
+    <StorageItem ID="DemoInvoice Docs" ConnectionString="Provider=sdfilesystem;Path=\\Localhost\GenericPluginDemo\DemoInvoice\SDDocs\Faturas;CredentialsMode=None;AuthProtocol=NTLM" />
+    <StorageItem ID="DemoInvoice Tasks" ConnectionString="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemo;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+    <StorageItem ID="DemoInvoice Settings" ConnectionString="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemo;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+
+    <StorageItem ID="DemoTemplate Docs" ConnectionString="Provider=sdfilesystem;Path=\\Localhost\GenericPluginDemo\DemoInvoice\SDDocs\Templates;CredentialsMode=None;AuthProtocol=NTLM" />
+    <StorageItem ID="DemoTemplate Tasks" ConnectionString="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemo;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+    <StorageItem ID="DemoTemplate Settings" ConnectionString="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemo;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+  </StorageList>
+</Storage>

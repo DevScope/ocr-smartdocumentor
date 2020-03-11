@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Plugins>
+  <Plugin Id="Faturas">
+    <Fields>
+      <Field OrderId="1" Id="1" Type="Textbox" Label="NIF do fornecedor" Name="VendorVAT" Required="true" Visible="true" Enable="true" />
+      <Field OrderId="4" Id="4" Type="Textbox" Label="Nº Documento" Name="DocNumber" Required="false" Visible="true" Enable="true"/>
+
+      <Field OrderId="6" Id="5" Type="Textbox" Label="Data de emissão" Name="DocDate" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="7" Id="32" Type="Textbox" Label="Data de vencimento" Name="DueDate1" Required="false" Visible="true" Enable="true"  />
+
+      <Field OrderId="13" Id="24" Type="Textbox" Label="Base Incidência" Name="TotalNet" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="14" Id="25" Type="Textbox" Label="Total Iva" Name="TotalVat" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="15" Id="30" Type="Textbox" Label="Total Documento" Name="Total" Required="false" Visible="true" Enable="true"/>
+
+      <Field OrderId="1006" Id="6" Type="Textbox" Label="Valor Base 1" Name="TaxBase1" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="1008" Id="8" Type="Textbox" Label="Valor Iva 1" Name="TaxValue1" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="1009" Id="9" Type="Textbox" Label="Valor Base 2" Name="TaxBase2" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="1011" Id="11" Type="Textbox" Label="Valor Iva 2" Name="TaxValue2" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="1012" Id="12" Type="Textbox" Label="Valor Base 3" Name="TaxBase3" Required="false" Visible="true" Enable="true" />
+      <Field OrderId="1014" Id="14" Type="Textbox" Label="Valor Iva 3" Name="TaxValue3" Required="false" Visible="true" Enable="true" />
+
+      <Field OrderId="1020" Id="109" Type="Textbox" Label="Custom" Name="Custom" Required="false" Visible="true" Enable="true" FieldType="Float"/>
+
+      
+      <Field OrderId="2000" Id="1001" Type="CustomSingleColumnGrid" Label="Table" Name="Custom_Table" Required="true" Visible="true" Enable="true" />
+    </Fields>
+  </Plugin>
+</Plugins>
+
+
+<!--
+  VendorId = 0,
+  VendorVAT = 1,
+  VendorInternalId = 2,
+  PONumber = 3,
+  DocNumber = 4,
+  DocDate = 5,
+  TaxBase1 = 6,
+  TaxRate1 = 7,
+  TaxValue1 = 8,
+  TaxBase2 = 9,
+  TaxRate2 = 10,
+  TaxValue2 = 11,
+  TaxBase3 = 12,
+  TaxRate3 = 13,
+  TaxValue3 = 14,
+  TaxBase4 = 15,
+  TaxRate4 = 16,
+  TaxValue4 = 17,
+  TotalNetBase = 18,
+  TotalDiscount1 = 19,
+  TotalDiscount2 = 20,
+  RetentionValue = 21,
+  RetentionRate = 22,
+  FreightCosts = 23,
+  TotalNet = 24,
+  TotalVat = 25,
+  TotalExtraNoVat1 = 26,
+  TotalExtraNoVat2 = 27,
+  TotalExtraNoVat3 = 28,
+  TotalExtraNoVat4 = 29,
+  Total = 30,
+  DueDays1 = 31,
+  DueDate1 = 32,
+  DueDiscount1 = 33,
+  DueDays2 = 34,
+  DueDate2 = 35,
+  DueDiscount2 = 36,
+  DueDays3 = 37,
+  DueDate3 = 38,
+  DueDiscount3 = 39,
+  DueDays4 = 40,
+  DueDate4 = 41,
+  DueDiscount4 = 42
+-->
+

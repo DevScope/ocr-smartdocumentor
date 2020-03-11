@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<Workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="Devscope_DemoInvoice">
+  <Name>Invoice Demo</Name>
+  <Description>Invoice Demo</Description>
+  <TaskStorage>DemoInvoice Tasks</TaskStorage>
+  <DocStorage>DemoInvoice Docs</DocStorage>
+  <SettingsStorage>DemoInvoice Settings</SettingsStorage>
+  <LocalDocStorage>LocalDocs</LocalDocStorage>
+  <LocalTasksPath>LocalTasks</LocalTasksPath>
+  <TaskPromotedPropertyList>
+    <TaskPromotedProperty Name="FilterBatchName" Value="" Command="SELECT [BatchID], [BatchName], COUNT([DocID]) DocsCount, SUM([Pages]) TotalPages, MAX([Priority]) [Priority], DATEADD(MI, DATEDIFF(MI, GETUTCDATE(), GETDATE()), MIN(CreatedOn)) as CreatedOn FROM [dbo].[Tasks] WHERE [Queue] = 'ToReview' AND [Workspace] = 'Devscope_DemoInvoice' GROUP BY BatchID,BatchName ORDER BY MAX([Priority]) DESC, BatchName ASC" ColumnHeaders="REVIEW_STATION_TASK_BATCH_ID;REVIEW_STATION_TASK_BATCH_NAME;REVIEW_STATION_TASK_DOCS_COUNT;REVIEW_STATION_TASK_PAGES_SUM;REVIEW_STATION_TASK_PRIORITY;REVIEW_STATION_TASK_CREATEDON" Type="Database" />
+  </TaskPromotedPropertyList>
+  <WorkstationConfigList>
+    <WorkstationConfig Target="ScanStation">
+      <CustomPropertyEditorList>
+        <CustomPropertyEditor Context="TaskEdit">
+          <Title>Default Properties</Title>
+          <Type>SmartDocumentor.Core.PropertyEditors.GenericScanPropertyEditor</Type>
+          <Tooltip>Generic Property Editor</Tooltip>
+          <PropertyList />
+        </CustomPropertyEditor>
+      </CustomPropertyEditorList>
+      <CustomComponent />
+    </WorkstationConfig>
+    <WorkstationConfig Target="ReviewStation">
+      <CustomPropertyEditorList>
+        <CustomPropertyEditor Context="TaskEdit">
+          <Title>Invoice Fields</Title>
+          <Assembly>SmartDocumentor.GenericPlugin.Demo</Assembly>
+          <Type>SmartDocumentor.GenericPlugin.Demo.ReviewPlugin.GenericPlugin</Type>
+          <Tooltip>Invoice Fields</Tooltip>
+          <PropertyList>
+            <Property ID="ReviewActions" Value="Integrate Document|Process|Integrar documento no arquivo|1;Delete Document|Delete|Apagar documento|2" />
+            <Property ID="ReviewTemplates" Value="" />
+            <Property ID="WebApiUrl" Value="" />
+            <Property ID="WebApiKey" Value="" />
+            <Property ID="WebApiSecret" Value="" />
+          </PropertyList>
+        </CustomPropertyEditor>
+        <CustomPropertyEditor Context="BeforeTaskEdit">
+          <Title>Select Batch</Title>
+          <Type>SmartDocumentor.Core.PropertyEditors.GenericReviewTaskPromotedPropertyEditor</Type>
+          <Tooltip>Select Batch</Tooltip>
+          <PropertyList />
+        </CustomPropertyEditor>
+      </CustomPropertyEditorList>
+      <CustomComponent />
+    </WorkstationConfig>
+  </WorkstationConfigList>
+  <PipelineList>
+    <Pipeline Target="ScanStation" RunAt="Gui">
+      <StepList>
+        <Step Using="ScanStation" To="Scanned">
+          <SettingList />
+        </Step>
+        <Step From="Scanned" Using="DocUploadWorker" To="DocUploaded">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="DocUploaded" Using="TaskUploadWorker" To="Workspace:ToProcess">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+      </StepList>
+      <Design>
+        <Elements />
+      </Design>
+    </Pipeline>
+    <Pipeline Target="ProcessStation" RunAt="Service">
+      <StepList>
+        <Step Using="FolderMonitorWorker" To="FileImportedFromFolder">
+          <SettingList>
+            <Setting Name="Folders" Value="\\Localhost\GenericPluginDemo\Input\Invoices" />
+            <Setting Name="FilePatterns" Value="*.pdf|*.tif*" />
+            <Setting Name="TaskProperties" Value="_BatchName=Pasta" />
+          </SettingList>
+        </Step>
+        <Step From="FileImportedFromFolder" Using="DocUploadWorker" To="DocFromFolderUploaded">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="DocFromFolderUploaded" Using="TaskUploadWorker" To="Workspace:ToProcess">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+
+        <Step From="Workspace:ToProcess" Using="PrefetchWorker" To="ToProcess">
+          <SettingList>
+            <Setting Name="DownloadDoc" Value="True" />
+            <Setting Name="BufferSize" Value="5" />
+          </SettingList>
+        </Step>
+        <Step From="ToProcess" Using="ProcessInvoiceWorker" To="DocumentRecognized" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
+          <SettingList>
+            <Setting Name="WebApiUrl" Value="" />
+            <Setting Name="WebApiKey" Value="" />
+            <Setting Name="WebApiSecret" Value="" />
+            <Setting Name="RemoveCalculatedFields" Value="True" />
+            <Setting Name="CustomerFiscalNumber" Value="" />
+          </SettingList>
+        </Step>
+
+        <Step From="DocumentRecognized" Using="OCRExtractionWorker" To="OCRCompleted">
+          <SettingList>
+            <Setting Name="OcrSavePageText" Value="False" />
+            <Setting Name="PdfExtractTextWords" Value="True" />
+          </SettingList>
+        </Step>
+        <Step From="OCRCompleted" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
+          <SettingList />
+        </Step>
+        <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ToReview">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="Workspace:ToIntegrate" Using="RouterWorker" To="Integrated">
+          <SettingList>
+            <Setting Name="route:Integrate" Value="&quot;{$ReviewAction}&quot;==&quot;Integrate Document&quot;" />
+            <Setting Name="route:Deleted" Value="&quot;{$ReviewAction}&quot;==&quot;Delete Document&quot;" />
+          </SettingList>
+        </Step>
+        <Step From="Deleted" Using="TaskUploadWorker" To="Workspace:Deleted">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="Integrate" Using="GenericOutputWorker" To="Integrated" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
+          <SettingList>
+            <Setting Name="OutputFolder" Value="\\localhost\GenericPluginDemo\DemoInvoice\Output" />
+            <Setting Name="ConfigFileName" Value="SmartDocumentor.GenericPlugin.Fields.xml" />
+            <Setting Name="PluginId" Value="Faturas" />
+          </SettingList>
+        </Step>
+        <Step From="Integrated" Using="TaskUploadWorker" To="Workspace:Final">
+          <SettingList />
+        </Step>
+        <Step From="Workspace:Final" Using="MoveTaskToHistoryWorker" To="Workspace:History">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="3" IntervalBetweenRetries="5" />
+          <SettingList>
+            <Setting Name="PropertiesToRemove" Value="_OcrPageModel_\d+|InvoiceData|InvoiceLearningContext|ExtractedFieldData|ReviewedEntities" />
+            <Setting Name="DocFileDestination" Value="Delete" />
+          </SettingList>
+        </Step>
+        <Step From="Error" Using="TaskUploadWorker" To="Workspace:Error">
+          <SettingList />
+        </Step>
+      </StepList>
+      <Design>
+        <Elements />
+      </Design>
+    </Pipeline>
+    <Pipeline Target="ReviewStation" RunAt="Gui">
+      <StepList>
+        <Step From="Workspace:ToReview" Using="PrefetchWorker" To="ToReview">
+          <SettingList>
+            <Setting Name="DownloadDoc" Value="True" />
+            <Setting Name="bufferSize" Value="5" />
+            <Setting Name="MaxCheckoutRetries" Value="5" />
+            <Setting Name="LeaseTime" Value="86400" />
+            <Setting Name="LeaseTimeIntervalCheck" Value="240" />
+            <Setting Name="Sort" Value="ID ASC" />
+            <Setting Name="MaxCheckoutRetriesQueue" Value="Error" />
+            <Setting Name="Filter" Value="BatchName = '{$FilterBatchName}'" />
+          </SettingList>
+        </Step>
+        <Step From="ToReview" Using="ReviewStation" To="Reviewed">
+          <SettingList />
+        </Step>
+        <Step From="Reviewed" Using="TaskUploadWorker" To="Workspace:ToIntegrate">
+          <SettingList />
+        </Step>
+      </StepList>
+      <Design>
+        <Elements />
+      </Design>
+    </Pipeline>
+  </PipelineList>
+  <SettingList>
+    <Setting Name="GroupMode" Value="Batch" />
+    <Setting Name="BatchName" Value="Invoice" />
+  </SettingList>
+  <BatchSequenceNumber></BatchSequenceNumber>
+</Workspace>

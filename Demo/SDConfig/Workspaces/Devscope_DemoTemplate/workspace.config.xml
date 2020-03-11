@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<Workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="Devscope_DemoTemplate">
+  <Name>Demo Templates</Name>
+  <Description>Demo Templates</Description>
+  <TaskStorage>DemoTemplate Tasks</TaskStorage>
+  <DocStorage>DemoTemplate Docs</DocStorage>
+  <LocalDocStorage>LocalDocs</LocalDocStorage>
+  <LocalTasksPath>LocalTasks</LocalTasksPath>
+  <TaskPromotedPropertyList />
+  <WorkstationConfigList>
+    <WorkstationConfig Target="ScanStation">
+      <CustomPropertyEditorList>
+        <CustomPropertyEditor Context="TaskEdit">
+          <Title>Processos Oficinais Document Properties</Title>
+          <Type>SmartDocumentor.Core.PropertyEditors.GenericScanPropertyEditor</Type>
+          <Tooltip>Generic Property Editor</Tooltip>
+          <PropertyList />
+        </CustomPropertyEditor>
+      </CustomPropertyEditorList>
+      <CustomComponent />
+    </WorkstationConfig>
+    <WorkstationConfig Target="ReviewStation">
+      <CustomPropertyEditorList>
+        <CustomPropertyEditor Context="TaskEdit">
+          <Title>Document Properties</Title>
+          <Type>SmartDocumentor.Core.PropertyEditors.GenericReviewPropertyEditor</Type>
+          <Tooltip>Document Properties</Tooltip>
+          <PropertyList>
+            <Property ID="ReviewActions" Value="Integrate Document|Process|Integrar documento no arquivo|1;Retry|Retry|Retry|7;Delete Document|Delete|Delete Document|2;" />
+            <Property ID="ReviewTemplates" Value="Devscope_DemoTemplate" />
+          </PropertyList>
+        </CustomPropertyEditor>
+      </CustomPropertyEditorList>
+      <CustomComponent />
+    </WorkstationConfig>
+  </WorkstationConfigList>
+  <PipelineList>
+    <Pipeline Target="ScanStation" RunAt="Gui">
+      <StepList>
+        <Step Using="ScanStation" To="Scanned">
+          <SettingList />
+        </Step>
+        <Step From="Scanned" Using="DocUploadWorker" To="DocUploaded">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="DocUploaded" Using="TaskUploadWorker" To="Workspace:ToProcess">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+      </StepList>
+    </Pipeline>
+    <Pipeline Target="ProcessStation" RunAt="Service">
+      <StepList>
+        <Step Using="FolderMonitorWorker" To="FileImportedFromFolder">
+          <SettingList>
+            <Setting Name="Folders" Value="\\Localhost\GenericPluginDemo\Input\Inqueritos" />
+            <Setting Name="DocSeparationEnabled" Value="True" />
+            <Setting Name="DocSeparationMethod" Value="EveryNPages" />
+            <Setting Name="DocSeparationEveryNPagesPageSetCount" Value="1" />
+            <Setting Name="FilePatterns" Value="*.pdf|*.tif*" />
+            <Setting Name="TaskProperties" Value="_DocumentPreProccessedStatus=True" />
+          </SettingList>
+        </Step>
+        <Step From="FileImportedFromFolder" Using="DocUploadWorker" To="DocFromFolderUploaded">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="DocFromFolderUploaded" Using="TaskUploadWorker" To="Workspace:ToProcess">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+        <Step From="Workspace:ToProcess" Using="PrefetchWorker" To="ToProcess">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList>
+            <Setting Name="DownloadDoc" Value="True" />
+            <Setting Name="Sort" Value="ID ASC" />
+            <Setting Name="BufferSize" Value="5" />
+            <Setting Name="MaxCheckoutRetriesQueue" Value="Error" />
+          </SettingList>
+        </Step>
+        <Step From="ToProcess" Using="DocumentRecognizerWorker" To="DocumentRecognized">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList>
+            <!--<Setting Name="ImageSignatureBitonalMethod" Value="CustomDynamicSauvola" />
+            <Setting Name="ImageSignatureAutoCleanBlackBorders" Value="False" />
+            <Setting Name="ImageSignatureAutoDeskew" Value="True" />
+            <Setting Name="ImageSignatureAutoRotate" Value="False" />
+            <Setting Name="ImageSignatureAutoInvert" Value="False" />
+            <Setting Name="ImageSignatureBitonalCustomParams" Value="0.200;10" />-->
+            <Setting Name="ImageAutoCleanBlackBorders" Value="False" />
+            <Setting Name="ImageAutoDeskew" Value="True" />
+            <Setting Name="ImageAutoInvert" Value="False" />
+            <Setting Name="ImageAutoRotate" Value="False" />
+          </SettingList>
+        </Step>
+
+        <Step From="DocumentRecognized" Using="TaskUploadWorker" To="Workspace:ToReview">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
+        </Step>
+
+        <Step From="Workspace:ToIntegrate" Using="RouterWorker" To="WithoutRoute">
+          <SettingList>
+            <Setting Name="route:Integrate" Value="&quot;{$ReviewAction}&quot;==&quot;Integrate Document&quot;" />
+            <Setting Name="route:ToProcess" Value="&quot;{$ReviewAction}&quot;==&quot;Retry&quot;" />
+            <Setting Name="route:Deleted" Value="&quot;{$ReviewAction}&quot;==&quot;Delete Document&quot;" />
+          </SettingList>
+        </Step>
+
+        <Step From="WithoutRoute" Using="TaskUploadWorker" To="Workspace:ToReview">
+          <SettingList />
+        </Step>
+
+        <Step From="Integrate" Using="IntegrateInquerioWorker" To="Integrated" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Inquerios">
+          <SettingList>
+            <Setting Name="ConnectionString" Value="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemo;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+          </SettingList>
+        </Step>
+
+        <Step From="Deleted" Using="FormattedFileNameWorker" To="Integrated">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="10" />
+          <SettingList>
+            <Setting Name="StorageProvider" Value="SmartDocumentor.Core.Storage.Builtin.FileSystem" />
+            <Setting Name="Path" Value="\\Localhost\GenericPluginDemo\Inqueritos\Deleted" />
+            <Setting Name="OverwriteDestinationFile" Value="True" />
+            <Setting Name="DocumentExistsException" Value="workspace:ToReview" />
+            <Setting Name="DocumentExistsMessage" Value="Não foi possivel enviar para a pasta de Documentos Apagados. Existe um ficheiro com o nome {Filename}." />
+            <Setting Name="ConvertToSearchablePdf" Value="False" />
+          </SettingList>
+        </Step>
+
+        <Step From="Integrated" Using="TaskUploadWorker" To="Workspace:Final">
+          <SettingList />
+        </Step>
+        <Step From="Workspace:Final" Using="MoveTaskToHistoryWorker" To="Workspace:History">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="3" IntervalBetweenRetries="5" />
+          <SettingList>
+            <Setting Name="PropertiesToRemove" Value="_OcrPageModel_\d+|InvoiceData|InvoiceLearningContext|ExtractedFieldData|ReviewedEntities" />
+            <Setting Name="DocFileDestination" Value="Delete" />
+          </SettingList>
+        </Step>
+        <Step From="Error" Using="TaskUploadWorker" To="Workspace:Error">
+          <SettingList />
+        </Step>
+      </StepList>
+    </Pipeline>
+    <Pipeline Target="ReviewStation" RunAt="Gui">
+      <StepList>
+        <Step From="Workspace:ToReview" Using="PrefetchWorker" To="ToReview">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList>
+            <Setting Name="DownloadDoc" Value="True" />
+            <Setting Name="BufferSize" Value="5" />
+            <Setting Name="Sort" Value="ID ASC" />
+            <Setting Name="LeaseTime" Value="28800" />
+            <Setting Name="ReservationLeaseTime" Value="259200" />
+            <Setting Name="UseCurrentUserAsCheckoutId" Value="true" />
+            <Setting Name="MaxCheckoutRetriesQueue" Value="Error" />
+          </SettingList>
+        </Step>
+        <Step From="ToReview" Using="ReviewStation" To="Reviewed">
+          <SettingList />
+        </Step>
+        <Step From="Reviewed" Using="TaskUploadWorker" To="Workspace:ToIntegrate">
+          <SettingList />
+        </Step>
+        <Step From="Error" Using="TaskUploadWorker" To="Workspace:Error">
+          <SettingList />
+        </Step>
+      </StepList>
+    </Pipeline>
+  </PipelineList>
+  <SettingList />
+  <BatchSequenceNumber />
+</Workspace>

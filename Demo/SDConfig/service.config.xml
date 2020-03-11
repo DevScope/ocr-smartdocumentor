@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ServiceList>
+    <ServiceItem Type="Notification" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" />
+    <ServiceItem Type="MetadataSearch" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" Index="" IndexType="" />
+    <ServiceItem Type="LogTrackingSerach" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" Index="" IndexType="" />
+  </ServiceList>
+</Service>
