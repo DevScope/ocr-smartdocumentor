@@ -180,8 +180,7 @@ a high level of performance and integration of information, which
 dramatically reduces the need to provide data on business processes and
 allows the focus to be put on management and strategic decision making.
 
-![esquema-how-02.png](media/image2.png){width="5.905555555555556in"
-height="2.651388888888889in"}
+![esquema-how-02.png](media/sd_workflow.png "SmartDocumentor Workflow")
 
 Our solution consists of 5 separate modules that can be installed in a
 distributed way (Process Station, Scan Station, Review Station, Template
@@ -225,8 +224,7 @@ by enabling the recognition directly from the scanner.
     document separation. The use of barcodes also allows to
     automatically classify the documents.
 
-![](media/image3.png){width="5.895833333333333in"
-height="3.2604166666666665in"}
+!["sd_scanstation.png"](media/sd_scanstation.png "Scan Station Overview")
 
 #### Usage 
 
@@ -242,8 +240,7 @@ this will allow to configure a new profile.
 2.  Set if you want to use **Ignore Blank** Pages or **Enable
     separation**
 
-![](media/image4.png){width="5.905555555555556in"
-height="4.763194444444444in"}
+!["sd_scanstation_properties.png"](media/sd_scanstation_properties.png "SD Scanstation Properties")
 
 3.  Check in the separator **Pages Color** if you need to change the
     color format that will be used when scanning. By default, it is set
@@ -252,9 +249,7 @@ height="4.763194444444444in"}
 > The **conversion settings** can be used to improve scanning results,
 > like remove color patterns or improve the text quality.
 >
-> ![](media/image5.png){width="5.905555555555556in"
-> height="4.770138888888889in"}
-
+> !["sd_scanstation_properties2.png"](media/sd_scanstation_properties2.png "SD Scanstation Properties")
 4.  In the separator **Page Processing,** it is available a set of
     options that allow a more granular configuration.
 
@@ -283,15 +278,13 @@ height="4.763194444444444in"}
 5.  **Save Settings to a Scanner Profile** will save the configurations
     in the local machine and make it available in the list of profiles.
 
-![](media/image6.png){width="5.905555555555556in"
-height="3.301388888888889in"}
+!["sd_scanstation_scan.png"](media/sd_scanstation_scan.png "SD Scanstation Scan")
 
 Select the scanner profile and do **Start Scanning.** The documents will
 be imported, converted and displayed in the View area. From here it is
 possible to do additional editions on the **Edit** separator.
 
-![](media/image7.png){width="5.905555555555556in"
-height="3.473611111111111in"}
+!["sd_scanstation_send.png"](media/sd_scanstation_send.png "SD Scanstation Send")
 
 Finally Send the documents for processing by selecting the separator
 Send and then the button **Send All.**
@@ -308,8 +301,7 @@ and ICR (Intelligent Character Recognition).
 When installed SmartDocumentor will start SmartDocumentor ProcessStation
 service. We always need to check if the service is running.
 
-![](media/image8.png){width="5.905555555555556in"
-height="0.9416666666666667in"}
+!["task_manager_processstation.png"](media/task_manager_processstation.png "Task Manager Process Station")
 
 ### Review - Review Station
 
@@ -326,8 +318,7 @@ the captured information in the correspondent field boxes. Review
 Station can have custom plugins that will allow specific validations and
 field naming. Fields can be of the type text box, drop box or check box.
 
-![](media/image9.png){width="5.905555555555556in"
-height="3.7569444444444446in"}
+!["sd_reviewstation.png"](media/sd_reviewstation.png "Review Station")
 
 #### Usage
 
@@ -338,8 +329,7 @@ Select the workspace you want to review the documents, SmartDocumentor
 will automatically display documents that are ready for reviewing. It is
 possible to see documents that are ready to review in the top bar.
 
-![](media/image10.png){width="5.905555555555556in"
-height="3.0548611111111112in"}
+!["sd_reviewstation_review.png"](media/sd_reviewstation_review.png "Review Station")
 
 The fields can be navigated using tab key. When selecting a field from
 the form, if the field was already detected, the viewer will display a
@@ -365,8 +355,7 @@ different types of documents.
 Template editor is tool for facilitating the information's extraction
 and especially useful in form type documents.
 
-![](media/image11.png){width="5.905555555555556in"
-height="3.0284722222222222in"}
+!["sd_templatestation.png"](media/sd_templatestation.png "Template Editor")
 
 #### Usage
 
@@ -375,15 +364,14 @@ for the template, template editor will take any document in the format
 tif, jpg, bmp, gif, png or pdf. Template editor will always binarize the
 image.
 
-![](media/image12.png){width="5.905555555555556in"
-height="2.033333333333333in"}
+!["sd_templatestation_capture.png"](media/sd_templatestation_capture.png "Template Editor Capture")
 
 Changing to section **Capture** will make possible to mark areas to
 extract. For text extraction is possible to select **OCR** -- for
 digital text recognition, **ICR** -- for handwritten text, or **Table
 OCR** -- for multiple fields with digital text.
 
-![](media/image13.png){width="5.905555555555556in" height="0.9375in"}
+!["sd_templatestation_ocrgrid.png"](media/sd_templatestation_ocrgrid.png "Template Editor OMR Grid")
 
 Apart from the most obvious options **OMR Grid** may be used for
 multiple choice check box.
@@ -391,9 +379,7 @@ multiple choice check box.
 The Capture Properties, in the right bottom, will change with the type
 of capture that is being drawn.
 
-![](media/image14.png){width="5.905555555555556in"
-height="3.3243055555555556in"}
-
+!["sd_templatestation_properties.png"](media/sd_templatestation_properties.png "Template Editor Properties")
 **Edit Properties** will be available of the **OCR**, **ICR** and
 **Barcode** captures, this pane will allow to set additional
 configurations for each field and even test the result from the
@@ -404,14 +390,12 @@ Template Match Rules, which defines, from the pre-set captures, the ones
 that match a statement as being the correspondent. It is possible to use
 conditional operators to improve results.
 
-![](media/image15.png){width="5.905555555555556in"
-height="2.9208333333333334in"}
+!["sd_templatestation_matchingrules.png"](media/sd_templatestation_matchingrules.png "Template Editor Match Rules")
 
 Finally, template editor allows to test visually the outcomes of a
 template, this may be used from the Testing section.
 
-![](media/image16.png){width="5.905555555555556in"
-height="3.2881944444444446in"}
+!["sd_templatestation_test.png"](media/sd_templatestation_test.png "Template Editor Test")
 
 To test a document, just select the folder icon and choose the documents
 to recognize. To see the outcome just press **Recognize Documents.** If
@@ -426,8 +410,7 @@ SmartDocumentor, as it is based in folders structure and a
 pre-structured workspace file. Still to help visualize and manage the
 workspaces it is possible to use Management Station.
 
-![](media/image17.png){width="5.905555555555556in"
-height="2.876388888888889in"}
+!["sd_managmentstation.png"](media/sd_managmentstation.png "Template Editor Management")
 
 ### SmartDocumentor's Assumptions
 
@@ -470,8 +453,7 @@ a server machine for processing the documents and one or several
 machines for reviewing - clients. The next image shows a common example
 for a workflow.
 
-![](media/image18.jpeg){width="6.072916666666667in"
-height="7.2050448381452314in"}
+!["workflow_overview.png"](media/workflow_overview.png "Workflow Overview")
 
 #### Description
 
@@ -512,33 +494,9 @@ height="7.2050448381452314in"}
         TaskHistory table. The documents will also be moved from SDDocs
         to SDDocs Processed folder.
 
-+---------+---------+---------+---------+---------+--------+--------+
-| W       | D       | Fil     |         |         |        |        |
-| orkflow | atabase | eSystem |         |         |        |        |
-+=========+=========+=========+=========+=========+========+========+
-|         | *       | *       | **S     | **S     |        |        |
-|         | *Task** | *TaskHi | DDocs** | DDocs** |        |        |
-|         |         | story** |         |         |        |        |
-|         |         |         |         | **Proc  |        |        |
-|         |         |         |         | essed** |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
-|         | **SQL   | **      | **Final | **SQL** |        |        |
-|         | Oper    | Initial | S       |         |        |        |
-|         | ation** | S       | tatus** | **Oper  |        |        |
-|         |         | tatus** |         | ation** |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
-| Scan    | Insert  |         | To      |         | Create |        |
-| Station |         |         | Process |         |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
-| Process | Update  | To      | T       |         | Read   |        |
-| Station |         | Process | oReview |         |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
-| Review  | Update  | T       | ToIn    |         | Read   |        |
-| Station |         | oReview | tegrate |         |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
-| Process | Delete  | ToIn    |         | Insert  | Delete | Create |
-| Station |         | tegrate |         |         |        |        |
-+---------+---------+---------+---------+---------+--------+--------+
+
+!["workflow_description.png"](media/workflow_description.png "Workflow Description")
+
 
 Extensibility and future versions
 ---------------------------------
@@ -583,8 +541,7 @@ folder must be always accessible and is a shared folder in the network.
 Below we show an example of a SDconfig folder, the structure for each
 file will be approached in the following sections.
 
-![](media/image19.png){width="2.6253663604549433in"
-height="1.0939031058617672in"}
+!["sdconfig_folder.png"](media/sdconfig_folder.png "SDconfig Folder")
 
 2‑1 SDConfig example folder
 
@@ -600,29 +557,16 @@ services. Currently, it's not used and its stored for compatibility with
 legacy SmartDocumentor configurations.
 
 Example of service.config.xml:
-
-1.  \<?xml version=\"1.0\"?\>
-
-2.  \<Service xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\>
-
-3.  \<ServiceList\>
-
-4.  \<ServiceItem Type=\"Notification\" UseService=\"False\" Server=\"\"
-    Port=\"\" UserCurrentCredentials=\"True\" UserName=\"\"
-    Password=\"\" /\>
-
-5.  \<ServiceItem Type=\"MetadataSearch\" UseService=\"False\"
-    Server=\"\" Port=\"\" UserCurrentCredentials=\"True\" UserName=\"\"
-    Password=\"\" Index=\"\" IndexType=\"\" /\>
-
-6.  \<ServiceItem Type=\"LogTrackingSerach\" UseService=\"False\"
-    Server=\"\" Port=\"\" UserCurrentCredentials=\"True\" UserName=\"\"
-    Password=\"\" Index=\"\" IndexType=\"\" /\>
-
-7.  \</ServiceList\>
-
-8.  \</Service\>
+```{=html}
+1. <?xml version="1.0"?>
+2. <Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+3. <ServiceList>
+4. <ServiceItem Type="Notification" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" />
+5. <ServiceItem Type="MetadataSearch" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" Index="" IndexType="" />
+6. <ServiceItem Type="LogTrackingSerach" UseService="False" Server="" Port="" UserCurrentCredentials="True" UserName="" Password="" Index="" IndexType="" />
+7. </ServiceList>
+8. </Service>
+```
 
 ### Storage Configuration 
 
@@ -642,27 +586,15 @@ Mandatory attributes are:
     security and SQL provider.
 
 Example of storage.config.xml:
-
-1.  \<?xml version=\"1.0\"?\>
-
-2.  \<Storage xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\>
-
-3.  \<StorageList\>
-
-4.  \<StorageItem **ID**=\"DemoInvoice **Docs**\"
-    **ConnectionString**=\"Provider=sdfilesystem;Path=C:\\devscope\\DemoInvoice\\SDDocs\\Faturas;CredentialsMode=None;AuthProtocol=NTLM\"
-    /\>
-
-5.  \<StorageItem **ID**=\"DemoInvoice **Tasks**\"
-    **ConnectionString**=\"Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql\_data
-    source=.;sql\_initial
-    catalog=SmartDocumentorDemoInvoice;sql\_integrated
-    security=True;sql\_provider=System.Data.SqlClient\" /\>
-
-6.  \</StorageList\>
-
-7.  \</Storage\>
+```{=html}
+1.	<?xml version="1.0"?>
+2.	<Storage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+3.	  <StorageList>
+4.	    <StorageItem ID="DemoInvoice Docs" ConnectionString="Provider=sdfilesystem;Path=C:\devscope\DemoInvoice\SDDocs\Faturas;CredentialsMode=None;AuthProtocol=NTLM" />
+5.	    <StorageItem ID="DemoInvoice Tasks" ConnectionString="Provider=sdsql;CredentialsMode=None;AuthProtocol=NTLM;sql_data source=.;sql_initial catalog=SmartDocumentorDemoInvoice;sql_integrated security=True;sql_provider=System.Data.SqlClient" />
+6.	  </StorageList>
+7.	</Storage>
+```
 
 ### Plafond
 
@@ -686,38 +618,20 @@ SmartDocumentor and with the client's plugins. For each workspace, there
 is a **workspace.config** file.
 
 ### Workspace.config.xml
-
-1.  \<Workspace xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
-    ID=\"Devscope\_DemoInvoice\"\>
-
-2.  \<Name\>Invoice Demo\</Name\>
-
-3.  \<Description\>Invoice Demo\</Description\>
-
-4.  \<TaskStorage\>DemoInvoice Tasks\</TaskStorage\>
-
-5.  \<DocStorage\>DemoInvoice Docs\</DocStorage\>
-
-6.  \<LocalDocStorage\>LocalDocs\</LocalDocStorage\>
-
-7.  \<LocalTasksPath\>LocalTasks\</LocalTasksPath\>
-
-8.  \<TaskPromotedPropertyList /\>
-
-9.  \<WorkstationConfigList\>...\</WorkstationConfigList\>
-
 ```{=html}
-<!-- -->
+1.	<Workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="Devscope_DemoInvoice">
+2.	  <Name>Invoice Demo</Name>
+3.	  <Description>Invoice Demo</Description>
+4.	  <TaskStorage>DemoInvoice Tasks</TaskStorage>
+5.	  <DocStorage>DemoInvoice Docs</DocStorage>
+6.	  <LocalDocStorage>LocalDocs</LocalDocStorage>
+7.	  <LocalTasksPath>LocalTasks</LocalTasksPath>
+8.	  <TaskPromotedPropertyList />
+9.	  <WorkstationConfigList>…</WorkstationConfigList>
+43.	  <PipelineList>…</PipelineList>
+266.	 <SettingList />
+267. </Workspace> 
 ```
-43. \<PipelineList\>...\</PipelineList\>
-
-```{=html}
-<!-- -->
-```
-266. \<SettingList /\>
-
-267. \</Workspace\> 
 
  In the upper example of a workspace.config file its possible to be seen
 a minimized version where the highlighted parts are the recommended to
@@ -728,69 +642,40 @@ In the **WorkstationConfigList** we configure **ScanStation** and
 **ReviewStation** proprieties. The **ScanStation** normally does not
 have the need to be changed.
 
-10. \<WorkstationConfigList\>
+```{=html}
+10.	  <WorkstationConfigList>
+11.	    <WorkstationConfig Target=" WorkstationConfigList ">
+12.	      <CustomPropertyEditorList>
+13.	        <CustomPropertyEditor Context="TaskEdit">
+14.	          <Title>Default Properties</Title>
+15.	<Type>SmartDocumentor.Core.PropertyEditors.GenericScanPropertyEditor</Type>
+16.	          <Tooltip>Generic Property Editor</Tooltip>
+17.	          <PropertyList />
+18.	        </CustomPropertyEditor>
+19.	      </CustomPropertyEditorList>
+20.	      <CustomComponent />
+21.	    </WorkstationConfig>
+22.	    <WorkstationConfig Target="ReviewStation">
+23.	      <CustomPropertyEditorList>
+24.	        <CustomPropertyEditor Context="TaskEdit">
+25.	          <Title>Invoice Fields</Title>
+26.	          <Assembly>SmartDocumentor.GenericPlugin.Demo</Assembly>
+27.	<Type>SmartDocumentor.GenericPlugin.Demo.ReviewPlugin.InvoiceDemoPlugin</Type>
+28.	          <Tooltip>Invoice Fields</Tooltip>
+29.	          <PropertyList>
+30.	            <Property ID="ReviewActions" 			Value="Integrate Document|Process|Integrar documento no arquivo|1;			       Delete Document|Delete|Apagar documento|2" />
+31.	            <Property ID="ReviewTemplates" Value="" />
+32.	            <Property ID="WebApiUrl" Value=""/>
+33.	            <Property ID="WebApiKey" Value="" />
+34.	            <Property ID="WebApiSecret" Value="" />
+35.	          </PropertyList>
+36.	        </CustomPropertyEditor>
+37.	      </CustomPropertyEditorList>
+38.	      <CustomComponent />
+39.	    </WorkstationConfig>
+40.	  </WorkstationConfigList>
 
-11. \<WorkstationConfig Target=\" WorkstationConfigList \"\>
-
-12. \<CustomPropertyEditorList\>
-
-13. \<CustomPropertyEditor Context=\"TaskEdit\"\>
-
-14. \<Title\>Default Properties\</Title\>
-
-15. \<Type\>SmartDocumentor.Core.PropertyEditors.GenericScanPropertyEditor\</Type\>
-
-16. \<Tooltip\>Generic Property Editor\</Tooltip\>
-
-17. \<PropertyList /\>
-
-18. \</CustomPropertyEditor\>
-
-19. \</CustomPropertyEditorList\>
-
-20. \<CustomComponent /\>
-
-21. \</WorkstationConfig\>
-
-22. \<WorkstationConfig Target=\"ReviewStation\"\>
-
-23. \<CustomPropertyEditorList\>
-
-24. \<CustomPropertyEditor Context=\"TaskEdit\"\>
-
-25. \<Title\>Invoice Fields\</Title\>
-
-26. \<Assembly\>SmartDocumentor.GenericPlugin.Demo\</Assembly\>
-
-27. \<Type\>SmartDocumentor.GenericPlugin.Demo.ReviewPlugin.InvoiceDemoPlugin\</Type\>
-
-28. \<Tooltip\>Invoice Fields\</Tooltip\>
-
-29. \<PropertyList\>
-
-30. \<Property ID=\"**ReviewActions**\" Value=\"Integrate
-    Document\|Process\|Integrar documento no arquivo\|1; Delete
-    Document\|Delete\|Apagar documento\|2\" /\>
-
-31. \<Property ID=\"**ReviewTemplates**\" Value=\"\" /\>
-
-32. \<Property ID=\"**WebApiUrl**\" Value=\"\"/\>
-
-33. \<Property ID=\"**WebApiKey**\" Value=\"\" /\>
-
-34. \<Property ID=\"**WebApiSecret**\" Value=\"\" /\>
-
-35. \</PropertyList\>
-
-36. \</CustomPropertyEditor\>
-
-37. \</CustomPropertyEditorList\>
-
-38. \<CustomComponent /\>
-
-39. \</WorkstationConfig\>
-
-40. \</WorkstationConfigList\>
+```
 
  The fields highlighted correspond to the workspace's plugin. It is
 possible to add or remove actions from the **ReviewActions**, this
@@ -819,58 +704,28 @@ shows a possible pipeline where a document goes from, global state,
 *ToIntegrate* to either, local states, *Integrate* or *Deleted* and back
 to a global state.
 
-177. \<Step From=\"Workspace:ToIntegrate\" Using=\"RouterWorker\"
-     To=\"Integrated\"\>
-
-178. \<SettingList\>
-
-179. \<Setting Name=\"route:Integrate\"
-     Value=\"&quot;{\$ReviewAction}&quot;==&quot;Integrate
-     Document&quot;\" /\>
-
-180. \<Setting Name=\"route:Deleted\"
-     Value=\"&quot;{\$ReviewAction}&quot;==&quot;Delete Document&quot;\"
-     /\>
-
-181. \</SettingList\>
-
-182. \</Step\>
-
-183. \<Step From=\"Deleted\" Using=\"TaskUploadWorker\"
-     To=\"Workspace:Deleted\"\>
-
-184. \<RetryPolicyConfig Type=\"RetryN\" NumberOfRetries=\"5\"
-     IntervalBetweenRetries=\"5\" /\>
-
-185. \<SettingList /\>
-
-186. \</Step\>
-
-187. \<Step From=\"Integrate\" Using=\"GenericOutputWorker\"
-     To=\"Integrated\" Assembly=\"SmartDocumentor.GenericPlugin.Demo\"
-     Namespace=\"SmartDocumentor.GenericPlugin.Demo.Workers\"\>
-
-188. \<SettingList\>
-
-189. \<Setting Name=\"OutputFolder\"
-     Value=\"C:\\devscope\\DemoInvoice\\Output\" /\>
-
-190. \<Setting Name=\"ConfigFileName\"
-     Value=\"SmartDocumentor.GenericPlugin.InvoiceDemo.Fields.xml\" /\>
-
-191. \<Setting Name=\"PluginId\" Value=\"Invoice\" /\>
-
-192. \</SettingList\>
-
-193. \</Step\>
-
-194. \<Step From=\"Integrated\" Using=\"TaskUploadWorker\"
-     To=\"Workspace:Final\"\>
-
-195. \<SettingList /\>
-
-196. \</Step\> 
-
+```{=html}
+177.	<Step From="Workspace:ToIntegrate" Using="RouterWorker" To="Integrated">
+178.	  <SettingList>
+179.	    <Setting Name="route:Integrate" Value="&quot;{$ReviewAction}&quot;==&quot;Integrate Document&quot;" />
+180.	    <Setting Name="route:Deleted" Value="&quot;{$ReviewAction}&quot;==&quot;Delete Document&quot;" />
+181.	  </SettingList>
+182.	</Step>
+183.	<Step From="Deleted" Using="TaskUploadWorker" To="Workspace:Deleted">
+184.	  <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+185.	  <SettingList />
+186.	</Step>
+187.	<Step From="Integrate" Using="GenericOutputWorker" To="Integrated" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
+188.	  <SettingList>
+189.	    <Setting Name="OutputFolder" Value="C:\devscope\DemoInvoice\Output" />
+190.	    <Setting Name="ConfigFileName" Value="SmartDocumentor.GenericPlugin.InvoiceDemo.Fields.xml" />
+191.	    <Setting Name="PluginId" Value="Invoice" />
+192.	  </SettingList>
+193.	</Step>
+194.	<Step From="Integrated" Using="TaskUploadWorker" To="Workspace:Final">
+195.	  <SettingList />
+196.	</Step> 
+```
 When recovering documents back to a certain state only global states
 will be accepted. The accepted global steps are the ones seen in the
 status of the table in section 1.1.7.2 Description.
@@ -882,47 +737,27 @@ takes the document from de state Scanned in local variables to global
 *ToProcess*. Here we can see also the retry policy configuration where
 is possible to set the number of retries and the interval between each
 retry.
+```{=html}
+42.	<Pipeline Target="ScanStation" RunAt="Gui">
+43.	  <StepList>
+44.	    <Step Using="ScanStation" To="Scanned">
+45.	      <SettingList />
+46.	    </Step>
+47.	    <Step From="Scanned" Using="DocUploadWorker" To="DocUploaded">
+48.	      <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+49.	      <SettingList />
+50.	    </Step>
+51.	    <Step From="DocUploaded" Using="TaskUploadWorker" To="Workspace:ToProcess">
+52.	      <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+53.	      <SettingList />
+54.	    </Step>
+55.	  </StepList>
+56.	  <Design>
+57.	    <Elements />
+58.	  </Design>
+59.	</Pipeline> 
 
-42. \<Pipeline Target=\"ScanStation\" RunAt=\"Gui\"\>
-
-43. \<StepList\>
-
-44. \<Step Using=\"ScanStation\" To=\"Scanned\"\>
-
-45. \<SettingList /\>
-
-46. \</Step\>
-
-47. \<Step From=\"Scanned\" Using=\"DocUploadWorker\"
-    To=\"DocUploaded\"\>
-
-48. \<RetryPolicyConfig Type=\"RetryN\" NumberOfRetries=\"5\"
-    IntervalBetweenRetries=\"5\" /\>
-
-49. \<SettingList /\>
-
-50. \</Step\>
-
-51. \<Step From=\"DocUploaded\" Using=\"TaskUploadWorker\"
-    To=\"Workspace:ToProcess\"\>
-
-52. \<RetryPolicyConfig Type=\"RetryN\" NumberOfRetries=\"5\"
-    IntervalBetweenRetries=\"5\" /\>
-
-53. \<SettingList /\>
-
-54. \</Step\>
-
-55. \</StepList\>
-
-56. \<Design\>
-
-57. \<Elements /\>
-
-58. \</Design\>
-
-59. \</Pipeline\> 
-
+```
 ### Review Station
 
 In the review station configuration, it's expected to include settings
@@ -933,37 +768,23 @@ bufferSize,* *TopItems, MaxCheckoutRetries, MaxCheckoutRetriesQueue,
 RetryPolicyConfig, LeaseTime and Sort*. Also, in this configuration is
 set what the next state for the document after the review.
 
-138. \<Pipeline Target=\"ReviewStation\" RunAt=\"Gui\"\>
-
-139. \<StepList\>
-
-140. \<Step From=\"Workspace:ToReview\" Using=\"PrefetchWorker\"
-     To=\"ToReview\"\>
-
-141. \<SettingList\>
-
-142. \<Setting Name=\"**DownloadDoc**\" Value=\"True\" /\>
-
-143. \<Setting Name=\"**BufferSize**\" Value=\"5\" /\>
-
-144. \</SettingList\>
-
-145. \</Step\>
-
-146. \<Step From=\"ToReview\" Using=\"ReviewStation\" To=\"Reviewed\"\>
-
-147. \<SettingList /\>
-
-148. \</Step\>
-
-149. \<Step From=\"Reviewed\" Using=\"TaskUploadWorker\"
-     To=\"Workspace:ToIntegrate\"\>
-
-150. \<SettingList /\>
-
-151. \</Step\>
-
-152. \</Pipeline\>
+```{=html}
+138.	<Pipeline Target="ReviewStation" RunAt="Gui">
+139.	  <StepList>
+140.	    <Step From="Workspace:ToReview" Using="PrefetchWorker" To="ToReview">
+141.	      <SettingList>
+142.	        <Setting Name="DownloadDoc" Value="True" />
+143.	        <Setting Name="BufferSize" Value="5" />
+144.	      </SettingList>
+145.	    </Step>
+146.	    <Step From="ToReview" Using="ReviewStation" To="Reviewed">
+147.	      <SettingList />
+148.	    </Step>
+149.	    <Step From="Reviewed" Using="TaskUploadWorker" To="Workspace:ToIntegrate">
+150.	      <SettingList />
+151.	    </Step>
+152.	</Pipeline>
+```
 
 #### Configure Batch 
 
@@ -975,46 +796,24 @@ Also, its needed to be the **GroupMode** to *Batch*.
 The filter are the files resulting from a query to the tasks, in order
 to provide the batch elements.
 
-11. \<TaskPromotedPropertyList\>
-
-12. \<**TaskPromotedProperty** Name=\"**FilterBatchName**\" Value=\"\"
-    Command=\"***\<QUERY\>***\"
-    ColumnHeaders=\"REVIEW\_STATION\_TASK\_BATCH\_ID;REVIEW\_STATION\_TASK\_BATCH\_NAME;REVIEW\_STATION\_TASK\_DOCS\_COUNT;REVIEW\_STATION\_TASK\_PAGES\_SUM;REVIEW\_STATION\_TASK\_PRIORITY;REVIEW\_STATION\_TASK\_CREATEDON\"
-    Type=\"Database\" /\>
-
-13. \</TaskPromotedPropertyList\>
-
 ```{=html}
-<!-- -->
+11.	<TaskPromotedPropertyList>
+12.	    <TaskPromotedProperty Name="FilterBatchName" Value="" Command="<QUERY>" ColumnHeaders="REVIEW_STATION_TASK_BATCH_ID;REVIEW_STATION_TASK_BATCH_NAME;REVIEW_STATION_TASK_DOCS_COUNT;REVIEW_STATION_TASK_PAGES_SUM;REVIEW_STATION_TASK_PRIORITY;REVIEW_STATION_TASK_CREATEDON" Type="Database" />
+13.	</TaskPromotedPropertyList>
+224.	  … 
+225.	       <Step From="workspace:ToReview" Using="PrefetchWorker" To="ToReview">
+226.	          <SettingList>
+227.	            …
+228.	            <Setting Name="Filter" Value="BatchName = '{$FilterBatchName}'" />
+229.	            …
+230.	          </SettingList>
+231.	        </Step> 
+232.	  …
+254.	<SettingList>
+255.	    <Setting Name="GroupMode" Value="Batch" />
+256.	</SettingList>
+
 ```
-224. ...
-
-225. \<Step From=\"workspace:ToReview\" Using=\"PrefetchWorker\"
-     To=\"ToReview\"\>
-
-226. \<SettingList\>
-
-227. ...
-
-228. \<**Setting** Name=\"**Filter**\" Value=\"**BatchName** =
-     \'{\$**FilterBatchName**}\'\" /\>
-
-229. ...
-
-230. \</SettingList\>
-
-231. \</Step\>
-
-232. ...
-
-```{=html}
-<!-- -->
-```
-254. \<SettingList\>
-
-255. \<**Setting** Name=\"**GroupMode**\" Value=\"**Batch**\" /\>
-
-256. \</SettingList\>
 
 ### Process Station
 
@@ -1022,131 +821,62 @@ As most workers will be called from process station this part of the
 settings will be more complex, it's also common to send parameters to
 the workers, that can be passed as settings
 
-60. \<Pipeline Target=\"**ProcessStation**\" RunAt=\"Service\"\>
-
-61. \<StepList\>
-
-62. \<Step From=\"Workspace:ToProcess\" Using=\"PrefetchWorker\"
-    To=\"ToProcess\"\>
-
-63. \<SettingList\>
-
-64. \<Setting Name=\"DownloadDoc\" Value=\"True\" /\>
-
-65. \<Setting Name=\"bufferSize\" Value=\"5\" /\>
-
-66. \</SettingList\>
-
-67. \</Step\>
-
-68. \<Step From=\"ToProcess\" Using=\"ProcessInvoiceWorker\"
-    To=\"DocumentRecognized\" Assembly=\"SmartDocumentor.GenericPlugin\"
-    Namespace=\"SmartDocumentor.GenericPlugin.Workers\"\>
-
-69. \<SettingList\>
-
-70. \<Setting Name=\"WebApiUrl\" Value=\"\" /\>
-
-71. \<Setting Name=\"WebApiKey\" Value=\"\" /\>
-
-72. \<Setting Name=\"WebApiSecret\" Value=\"\" /\>
-
-73. \<Setting Name=\"RemoveCalculatedFields\" Value=\"True\" /\>
-
-74. \<Setting Name=\"CustomerFiscalNumber\" Value=\"\" /\>
-
-75. \</SettingList\>
-
-76. \</Step\>
-
-77. \<Step From=\"DocumentRecognized\" Using=\"OCRExtractionWorker\"
-    To=\"OCRCompleted\"\>
-
-78. \<SettingList\>
-
-79. \<Setting Name=\"OcrSavePageText\" Value=\"False\" /\>
-
-80. \</SettingList\>
-
-81. \</Step\>
-
-82. \<Step From=\"OCRCompleted\" Using=\"BaseProcessDocumentWorker\"
-    To=\"DocumentProcessed\" Assembly=\"SmartDocumentor.GenericPlugin\"
-    Namespace=\"SmartDocumentor.GenericPlugin.Workers\"\>
-
-83. \<SettingList /\>
-
-84. \</Step\>
-
-85. \<Step From=\"DocumentProcessed\" Using=\"TaskUploadWorker\"
-    To=\"Workspace:ToReview\"\>
-
-86. \<RetryPolicyConfig Type=\"RetryN\" NumberOfRetries=\"5\"
-    IntervalBetweenRetries=\"5\" /\>
-
-87. \<SettingList /\>
-
-88. \</Step\>
-
-89. \<Step From=\"Workspace:ToIntegrate\" Using=\"RouterWorker\"
-    To=\"Integrated\"\>
-
-90. \<SettingList\>
-
-91. \<Setting Name=\"route:Integrate\"
-    Value=\"\"{\$ReviewAction}\"==\"Integrate Document\"\" /\>
-
-92. \<Setting Name=\"route:Deleted\"
-    Value=\"\"{\$ReviewAction}\"==\"Delete Document\"\" /\>
-
-93. \</SettingList\>
-
-94. \</Step\>
-
-95. \<Step From=\"Deleted\" Using=\"TaskUploadWorker\"
-    To=\"Workspace:Deleted\"\>
-
-96. \<RetryPolicyConfig Type=\"RetryN\" NumberOfRetries=\"5\"
-    IntervalBetweenRetries=\"5\" /\>
-
-97. \<SettingList /\>
-
-98. \</Step\>
-
-99. \<Step From=\"Integrate\" Using=\"GenericOutputWorker\"
-    To=\"Integrated\" Assembly=\"SmartDocumentor.GenericPlugin.Demo\"
-    Namespace=\"SmartDocumentor.GenericPlugin.Demo.Workers\"\>
-
-100. \<SettingList\>
-
-101. \<Setting Name=\"OutputFolder\"
-     Value=\"C:\\devscope\\DemoInvoice\\Output\" /\>
-
-102. \<Setting Name=\"ConfigFileName\"
-     Value=\"SmartDocumentor.GenericPlugin.InvoiceDemo.Fields.xml\" /\>
-
-103. \<Setting Name=\"PluginId\" Value=\"Invoice\" /\>
-
-104. \</SettingList\>
-
-105. \</Step\>
-
-106. \<Step From=\"Integrated\" Using=\"TaskUploadWorker\"
-     To=\"Workspace:Final\"\>
-
-107. \<SettingList /\>
-
-108. \</Step\>
-
-109. \</StepList\>
-
-110. \<Design\>
-
-111. \<Elements /\>
-
-112. \</Design\>
-
-113. \</Pipeline\>
+```{=html}
+60.	<Pipeline Target="ProcessStation" RunAt="Service">
+61.	  <StepList>
+62.	    <Step From="Workspace:ToProcess" Using="PrefetchWorker" To="ToProcess">
+63.	      <SettingList>
+64.	        <Setting Name="DownloadDoc" Value="True" />
+65.	        <Setting Name="bufferSize" Value="5" />
+66.	      </SettingList>
+67.	    </Step>
+68.	    <Step From="ToProcess" Using="ProcessInvoiceWorker" To="DocumentRecognized" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
+69.	      <SettingList>
+70.	        <Setting Name="WebApiUrl" Value="" />
+71.	        <Setting Name="WebApiKey" Value="" />
+72.	        <Setting Name="WebApiSecret" Value="" />
+73.	        <Setting Name="RemoveCalculatedFields" Value="True" />
+74.	        <Setting Name="CustomerFiscalNumber" Value="" />
+75.	      </SettingList>
+76.	    </Step>    
+77.	    <Step From="DocumentRecognized" Using="OCRExtractionWorker" To="OCRCompleted">
+78.	      <SettingList>
+79.	        <Setting Name="OcrSavePageText" Value="False" />
+80.	      </SettingList>
+81.	    </Step>
+82.	    <Step From="OCRCompleted" Using="BaseProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
+83.	      <SettingList />
+84.	    </Step>
+85.	    <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ToReview">
+86.	      <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+87.	      <SettingList />
+88.	    </Step>
+89.	    <Step From="Workspace:ToIntegrate" Using="RouterWorker" To="Integrated">
+90.	      <SettingList>
+91.	        <Setting Name="route:Integrate" Value=""{$ReviewAction}"=="Integrate Document"" />
+92.	        <Setting Name="route:Deleted" Value=""{$ReviewAction}"=="Delete Document"" />
+93.	      </SettingList>
+94.	    </Step>
+95.	    <Step From="Deleted" Using="TaskUploadWorker" To="Workspace:Deleted">
+96.	      <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+97.	      <SettingList />
+98.	    </Step>
+99.	    <Step From="Integrate" Using="GenericOutputWorker" To="Integrated" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
+100.	      <SettingList>
+101.	        <Setting Name="OutputFolder" Value="C:\devscope\DemoInvoice\Output" />
+102.	        <Setting Name="ConfigFileName" Value="SmartDocumentor.GenericPlugin.InvoiceDemo.Fields.xml" />
+103.	        <Setting Name="PluginId" Value="Invoice" />
+104.	      </SettingList>
+105.	    </Step>
+106.	    <Step From="Integrated" Using="TaskUploadWorker" To="Workspace:Final">
+107.	      <SettingList />
+108.	    </Step>
+109.	  </StepList>
+110.	  <Design>
+111.	    <Elements />
+112.	  </Design>
+113.	</Pipeline>
+```
 
 Project Structure
 -----------------
@@ -1154,8 +884,7 @@ Project Structure
 The Demo project serves as a base for customizing SmartDocumentor to a
 specific client, for any generic plugin-based project.
 
-![](media/image20.png){width="3.7192694663167103in"
-height="2.271150481189851in"}
+!["demo_example.png"](media/demo_example.png "Demo Example")
 
 The Demo provides an example of how to configure a Review Plugin, mostly
 because this is the most common type of customization that is required.
@@ -1251,10 +980,11 @@ deleted, moved to the storage folder or uploaded to any other storage.
 When creating a plugin, it is possible to implement custom workers. In
 order to initiate a new worker first the class must inherit from
 **BaseWorker**:
+````
+17.	public class GenericOutputWorker : BaseWorker
+18.	    {}
 
-17. public class GenericOutputWorker : BaseWorker
-
-18. {}
+````
 
 In addition, there are two methods that must be overwritten, first is
 **InitializeWorkerMain** and second **ProcessItem**.
@@ -1262,76 +992,39 @@ In addition, there are two methods that must be overwritten, first is
 The example that follows, shows how a simple is using **GenericPlugin**
 to read fields from a source and them process and write them into the
 task.
-
-1.  protected override void InitializeWorkerMain()
-
-2.  {
-
-3.  if (WorkerSettings.TryGetValue(\"ForceExtractedFieldList\", out
-    string forceExtractedFieldListSetting))
-
-4.  {
-
-5.  if (!bool.TryParse(forceExtractedFieldListSetting, out
-    forceExtractedFieldList))
-
-6.  {
-
-7.  throw new ArgumentException(\$\"Invalid argument
-    \'ForceExtractedFieldList\'. Value:
-    \'{forceExtractedFieldListSetting}\'.\");
-
-8.  }
-
-9.  }
-
-10. }
-
-11.  
-
-12. public override void ProcessItem(SDTask task)
-
-13. {
-
-14. this.ExtractedFieldList = new List\<ExtractedField\>();
-
-15. this.OcrJobResultList = task.GetOrc();
-
-16. this.OcrJobResultByPageNumber = task.GetOrcByPageNumber();
-
-17. this.InvoiceData = task.GetInvoiceData();
-
-18. if (this.InvoiceData != null)
-
-19. {
-
-20. foreach (ExtractedField item in this.InvoiceData.Fields)
-
-21. {
-
-22. if ((string.IsNullOrEmpty(task.GetPropertyValue(item.FieldName))
-    \|\| forceExtractedFieldList) &&
-
-23. !string.IsNullOrEmpty(item.Entity?.Text))
-
-24. {
-
-25. this.AddOrReplaceExtractedField(item);
-
-26. task.SetPropertyValue(item.FieldName,
-    item.Entity.GetEntityTextValue(item.FieldName,
-    Editors.CaptureFieldDataType.String));
-
-27. }
-
-28. }
-
-29. }
-
-30. this.SetTaskData(task);
-
-31. } 
-
+````
+1.  1.	protected override void InitializeWorkerMain()
+2.	{
+3.	    if (WorkerSettings.TryGetValue("ForceExtractedFieldList", out string forceExtractedFieldListSetting))
+4.	    {
+5.	        if (!bool.TryParse(forceExtractedFieldListSetting, out forceExtractedFieldList))
+6.	        {
+7.	            throw new ArgumentException($"Invalid argument 'ForceExtractedFieldList'. Value: '{forceExtractedFieldListSetting}'.");
+8.	        }
+9.	    }
+10.	}
+11.	 
+12.	public override void ProcessItem(SDTask task)
+13.	{
+14.	    this.ExtractedFieldList = new List<ExtractedField>();
+15.	    this.OcrJobResultList = task.GetOrc();
+16.	    this.OcrJobResultByPageNumber = task.GetOrcByPageNumber();
+17.	    this.InvoiceData = task.GetInvoiceData();
+18.	    if (this.InvoiceData != null)
+19.	    {
+20.	        foreach (ExtractedField item in this.InvoiceData.Fields)
+21.	        {
+22.	            if ((string.IsNullOrEmpty(task.GetPropertyValue(item.FieldName)) || forceExtractedFieldList) &&
+23.	                    !string.IsNullOrEmpty(item.Entity?.Text))
+24.	            {
+25.	                this.AddOrReplaceExtractedField(item);
+26.	                task.SetPropertyValue(item.FieldName, item.Entity.GetEntityTextValue(item.FieldName, Editors.CaptureFieldDataType.String));
+27.	            }
+28.	        }
+29.	    }
+30.	    this.SetTaskData(task);
+31.	} 
+````
 Plugins
 -------
 
@@ -1341,8 +1034,7 @@ The scan plugin allows the creation of custom plugins. The settings and
 form adaptations are similar to the Review Plugin that is approached in
 the next section 2.5.2 Review Plugin
 
-![](media/image21.png){width="5.905555555555556in"
-height="2.9270833333333335in"}
+!["sd_scanstation_plugin.png"](media/sd_scanstation_plugin.png "Scan Station Plugin.png")
 
 ### Review Plugin
 
@@ -1352,8 +1044,7 @@ box with options from the database, three text fields with results from
 the SmartDocumentor API and a grid, where its shown the documents
 tabular text by line.
 
-![](media/image22.png){width="5.905555555555556in"
-height="2.892361111111111in"}
+!["sd_reviewstation_plugin.png"](media/sd_reviewstation_plugin.png "Review Station Plugin")
 
 It is possible to configure the Review Plugin based on the generic
 plugin or template. You can set the Review plugin as is shown below.
@@ -1365,124 +1056,70 @@ customize the messages to the users.
 Note that the **LearningActive** is set to false on Debug, this will
 prevent the application from sending test files to the SmartDocumentor
 API.
+````
+33.	public partial class ReviewPlugin : BaseReviewPlugin
+34.	{
+35.	   #region Properties
+36.	 
+37.	   protected override string ConfigFileName {get {return "SmartDocumentor.Client.Fields.xml";}}
+38.	   protected override string PluginId {get {return "Invoice";}}
+39.	   protected override bool ShowVendorFinder {get{return false;}}
+40.	   protected override bool ShowVendorHeader {get{return false;}}
+41.	#if DEBUG
+42.	   protected override bool LearningActive {get{return false;}}
+43.	#else
+44.	   protected override bool LearningActive {get{return true;}}
+45.	#endif
+46.	   protected override bool ShowReviewErrorMessageToUser {get{ return true;}}
+47.	   protected override string ReviewErrorMessage {get{return "Valide os campos em erro!";}}
+48.	   protected override string MandatoryFieldErrorMessage {get { return "Campo '{0}' é obrigatório";}}
+49.	   protected override string PluginLoadErrorMessage {get{ return "Erro no plugin. Por favor contacte o departamento de informática";}}
+50.	   protected override bool RunInvoiceValidations {get{return false;}}
+51.	   protected override bool ShowDeleteConfirmationMessage {get{ return true;}}
+52.	   protected override string DeleteConfirmationMessage {get{return "Tem a certeza que deseja eliminar?";}}
+53.	
+54.	  #endregion
+55.	…
 
-33. public partial class ReviewPlugin : BaseReviewPlugin
-
-34. {
-
-35. \#region Properties
-
-36.  
-
-37. protected override string ConfigFileName {get {return
-    \"SmartDocumentor.Client.Fields.xml\";}}
-
-38. protected override string PluginId {get {return \"Invoice\";}}
-
-39. protected override bool ShowVendorFinder {get{return false;}}
-
-40. protected override bool ShowVendorHeader {get{return false;}}
-
-41. \#if DEBUG
-
-42. protected override bool LearningActive {get{return false;}}
-
-43. \#else
-
-44. protected override bool LearningActive {get{return true;}}
-
-45. \#endif
-
-46. protected override bool ShowReviewErrorMessageToUser {get{ return
-    true;}}
-
-47. protected override string ReviewErrorMessage {get{return \"Valide os
-    campos em erro!\";}}
-
-48. protected override string MandatoryFieldErrorMessage {get { return
-    \"Campo \'{0}\' é obrigatório\";}}
-
-49. protected override string PluginLoadErrorMessage {get{ return \"Erro
-    no plugin. Por favor contacte o departamento de informática\";}}
-
-50. protected override bool RunInvoiceValidations {get{return false;}}
-
-51. protected override bool ShowDeleteConfirmationMessage {get{ return
-    true;}}
-
-52. protected override string DeleteConfirmationMessage {get{return
-    \"Tem a certeza que deseja eliminar?\";}}
-
-53. 
-
-54. \#endregion
-
-55. ...
-
+````
 The next example shows the reading from settings on the configuration to
 the class.
 
-1.  public ReviewPlugin(){
-
-2.  }
-
-3.  public override void SetCustomProperties(Dictionary\<string,
-    object\> customProperties)
-
-4.  {
-
-5.  base.SetCustomProperties(customProperties);
-
-6.    if
-    (!customProperties.ContainsKey(Constants.Settings.ConnectionString))
-
-7.  {
-
-8.  throw new
-    ArgumentNullException(Constants.Settings.ConnectionString);
-
-9.  }
-
-10.   if (!customProperties.ContainsKey(Constants.Settings.LocationId))
-
-11. {
-
-12. throw new ArgumentNullException(Constants.Settings.LocationId);
-
-13. }
-
-14.   var connectingString =
-    customProperties\[Constants.Settings.ConnectionString\].ToString();
-
-15. var locationId =
-    customProperties\[Constants.Settings.LocationId\].ToString();
-
-16. } 
-
- 
+````
+1.	public ReviewPlugin(){
+2.	}
+3.	public override void SetCustomProperties(Dictionary<string, object> customProperties)
+4.	{
+5.		base.SetCustomProperties(customProperties);
+6.	 	if (!customProperties.ContainsKey(Constants.Settings.ConnectionString))
+7.		{
+8.		throw new ArgumentNullException(Constants.Settings.ConnectionString);
+9.		}
+10.	 	if (!customProperties.ContainsKey(Constants.Settings.LocationId))
+11.		{
+12.		throw new ArgumentNullException(Constants.Settings.LocationId);
+13.		}
+14.	 	var connectingString = customProperties[Constants.Settings.ConnectionString].ToString();
+15.		var locationId = customProperties[Constants.Settings.LocationId].ToString();
+16.	} 
+````
 
 #### Template
 
 A template based in a template will be like the generic plugin, but will
 include in the workspace config a reference to the template under the
 PropertyList:
-
-28. \<PropertyList\>
-
-29. \<Property ID=\"ReviewActions\" Value=\"Integrate
-    Document\|GesDoc\|Send to GesDoc\|1;Retry\|Retry\|Retry\|7;Delete
-    Document\|Delete\|Delete Document\|2;\" /\>
-
-30. \<Property ID=\"ReviewTemplates\" Value=\"Template1; Template2\" /\>
-
-31. \</PropertyList\>
-
+````
+28.	<PropertyList>
+29.	    <Property ID="ReviewActions" Value="Integrate Document|GesDoc|Send to GesDoc|1;Retry|Retry|Retry|7;Delete Document|Delete|Delete Document|2;" />
+30.	    <Property ID="ReviewTemplates" Value="Template1; Template2" />
+31.	</PropertyList> 
+````
 Also, the Review Plugin must inherit from BaseTemplateReviewPlugin.
-
-1.  public partial class ReviewPlugin2 : BaseTemplateReviewPlugin
-
-2.  {}
-
+````
+1.	public partial class ReviewPlugin2 : BaseTemplateReviewPlugin
+2.	    {}
+````
  The implementation will similar to the generic plugin described next.
 
 #### Generic Plugin
@@ -1513,40 +1150,20 @@ Adding a new field to the document
 -   **Enable** = \"true\" - Whether "True" or "False" if editable.
 
 -   **Pattern** = **"**\[0-9\]**"** -- Regex expression to validate.
-
-1.  \<?xml version=\"1.0\" encoding=\"utf-8\" ?\>
-
-2.  \<Plugins\>
-
-3.  \<Plugin Id=\"Invoice\"\>
-
-4.  \<Fields\>
-
-5.  \<Field OrderId=\"1\" Id=\"1\" Type=\"Textbox\" Label=\"Nif
-    Fornecedor\" Name=\"VendorVAT\" Required=\"true\" Visible=\"true\"
-    Enable=\"true\" /\>
-
-6.  \<Field OrderId=\"2\" Id=\"100\" Type=\"Textbox\" Label=\"Nif
-    Empresa\" Name=\"ClientVAT\" Required=\"true\" Visible=\"true\"
-    Enable=\"true\" NoNormalization=\"true\"/\>
-
-7.  \<Field OrderId=\"3\" Id=\"4\" Type=\"Textbox\" Label=\"Nº
-    Documento\" Name=\"DocNumber\" Required=\"true\" Visible=\"true\"
-    Enable=\"true\" NoNormalization=\"true\"/\>
-
-8.  \<Field OrderId=\"4\" Id=\"5\" Type=\"Textbox\" Label=\"Data de
-    Emissão\" Name=\"DocDate\" Required=\"true\" Visible=\"true\"
-    Enable=\"true\" /\>
-
-9.  \<Field OrderId=\"2000\" Id=\"1001\" Type=\"CustomSingleColumnGrid\"
-    Label=\"Guias de remessa\" Name=\"PONumbers\" Required=\"true\"
-    Visible=\"true\" Enable=\"true\" /\>
-
-10. \</Fields\>
-
-11. \</Plugin\>
-
-12. \</Plugins\>
+````
+1.	<?xml version="1.0" encoding="utf-8" ?>
+2.	<Plugins>
+3.	  <Plugin Id="Invoice">
+4.	    <Fields>
+5.	      <Field OrderId="1" Id="1" Type="Textbox" Label="Nif Fornecedor" Name="VendorVAT" Required="true" Visible="true" Enable="true" />
+6.	      <Field OrderId="2" Id="100" Type="Textbox" Label="Nif Empresa" Name="ClientVAT" Required="true" Visible="true" Enable="true" NoNormalization="true"/>
+7.	      <Field OrderId="3" Id="4" Type="Textbox" Label="Nº Documento" Name="DocNumber" Required="true" Visible="true" Enable="true" NoNormalization="true"/>
+8.	      <Field OrderId="4" Id="5" Type="Textbox" Label="Data de Emissão" Name="DocDate" Required="true" Visible="true" Enable="true" />
+9.	      <Field OrderId="2000" Id="1001" Type="CustomSingleColumnGrid" Label="Guias de remessa" Name="PONumbers" Required="true" Visible="true" Enable="true" />
+10.	    </Fields>
+11.	  </Plugin>
+12.	</Plugins>
+````
 
 Create a Custom field is simples as defining a new field in the
 SmartDocumentor.Client.Fields.xml.
@@ -1581,13 +1198,11 @@ the IDE
 
 Select Debug + Attach to Process\... (CTRL + ALT + P)
 
-![](media/image23.png){width="2.8541666666666665in"
-height="1.9153958880139983in"}
+!["attach_process.png"](media/attach_process.png "Attach Process")
 
 Search by SmartDocumentor
 
-![](media/image24.png){width="4.931108923884515in"
-height="3.4895833333333335in"}
+!["attach_process2.png"](media/attach_process2.png "Attach Process")
 
 Select Attach and start debugging.
 
@@ -1603,55 +1218,39 @@ Checklist
 
 1.  Install SmartDocumentor
 
-```{=html}
-<!-- -->
-```
-8.  Add SmartDocumentor to firewall and anti-virus protection
+2.  Add SmartDocumentor to firewall and anti-virus protection
     exceptions.
 
-9.  Copy client configuration (SDConfig) to the server and share the
+3.  Copy client configuration (SDConfig) to the server and share the
     folder in the network, set to Everyone.
 
-10. Ensure all client machines have access to the folder.
+4. Ensure all client machines have access to the folder.
 
 ### Requirements
 
 #### Server
 
-+------------------+--------------------------------------------------+
+
 | **Requirement**  | **SmartDocumentor (Server)**                     |
-+==================+==================================================+
+|:-----------------:|:--------------------------------------------------|
 | Operating System | Windows Server 2012 R2 or superior               |
-+------------------+--------------------------------------------------+
-| Windows          | -   .NET Framework 4.6.1                         |
-|                  |                                                  |
-|                  | -   IIS (if SD API is installed locally)         |
-+------------------+--------------------------------------------------+
-| Hardware         | -   RAM: 8 Gb or superior                        |
-|                  |                                                  |
-|                  | -   CPU: 64-bit, 2 Ghz or superior, Quad-core    |
-|                  |                                                  |
-|                  | -   Disk Space: 300 GB (if B&W documents to a    |
-|                  |     2M/year rate)                                |
-+------------------+--------------------------------------------------+
+| Windows          | .NET Framework 4.6.1                         |
+|                  | IIS (if SD API is installed locally)         |
+| Hardware         | RAM: 8 Gb or superior                        |
+|                  | CPU: 64-bit, 2 Ghz or superior, Quad-core    |
+|                  | Disk Space: 300 GB (if B&W documents to a 2M/year rate)|
 | Database         | SQLServer 2014 Standard Edition or superior      |
-+------------------+--------------------------------------------------+
 
 #### Client
 
-+------------------+-----------------------------------------+
+
 | **Requirement**  | **SmartDocumentor (Client)**            |
-+==================+=========================================+
+|:-----------------:|:--------------------------------------------------|
 | Operating System | Windows 7, 8, 8.1 or 10                 |
-+------------------+-----------------------------------------+
 | Windows          | .NET Framework 4.6.1                    |
-+------------------+-----------------------------------------+
-| Hardware         | -   CPU: 1 x 3 ghz, core I3 or superior |
-|                  |                                         |
-|                  | -   RAM: 2 GB or superior               |
-|                  |                                         |
-|                  | -   Disk free space: 10 GB              |
-+------------------+-----------------------------------------+
+| Hardware         | CPU: 1 x 3 ghz, core I3 or superior |
+|                  | RAM: 2 GB or superior               |
+|                  | Disk free space: 10 GB              |
 
 ### Firewall and Antivirus Exclusions (Servers & Clients) 
 
@@ -1718,8 +1317,7 @@ steps:
 1.  Run the setup "SmartDocumentor-VERSION.exe" as administrator and
     follow the wizard instructions
 
-![](media/image25.png){width="3.8464162292213473in"
-height="3.2395833333333335in"}
+!["install_setup.png"](media/install_setup.png "Install Setup")
 
 11. If any of the prerequisites is missing, the setup will detect and
     ask to install them:
@@ -1734,41 +1332,36 @@ height="3.2395833333333335in"}
 
 -   Microsoft Visual C++ 2015
 
-![](media/image26.png){width="4.010416666666667in" height="3.03125in"}
+!["install_setup.png"](media/install_setup2.png "Install Setup")
 
 12. You must select all prerequisites and restart the computer if
     necessary.
 
-![](media/image27.png){width="5.260416666666667in"
-height="4.041666666666667in"}
+!["install_setup.png"](media/install_setup3.png "Install Setup")
 
 13. Check accept the terms and conditions. Click "Next"
 
-![](media/image28.png){width="4.666666666666667in"
-height="3.930424321959755in"}
+!["install_setup.png"](media/install_setup4.png "Install Setup")
 
 14. Choose the installation folder and click Next
 
-![](media/image29.png){width="4.5in" height="3.790051399825022in"}
+!["install_setup.png"](media/install_setup5.png "Install Setup")
 
 15. Choose the log folder and click Next
 
-![](media/image30.png){width="4.483048993875766in"
-height="3.7757753718285216in"}
+!["install_setup.png"](media/install_setup6.png "Install Setup")
 
 16. Select all components
 
-![](media/image31.png){width="4.427083333333333in"
-height="3.7286384514435698in"}
+!["install_setup.png"](media/install_setup7.png "Install Setup")
 
 17. Click Install.
 
-![](media/image32.png){width="4.46875in" height="3.7637314085739284in"}
+!["install_setup.png"](media/install_setup8.png "Install Setup")
 
 18. Click Close
 
-![](media/image33.png){width="4.034782370953631in"
-height="3.3982294400699913in"}
+!["install_setup.png"](media/install_setup9.png "Install Setup")
 
 ### Change the user running the windows service
 
@@ -1777,18 +1370,15 @@ needed.
 
 1.  Open Windows services.
 
-> ![](media/image34.png){width="3.5283016185476814in"
-> height="0.8333092738407699in"}
+!["services.png"](media/services.png "Services")
 
 2.  Search for "SmartDocumentor ProcessStation". Click Properties.
 
-![](media/image35.png){width="5.880597112860892in"
-height="2.4777209098862643in"}
+!["task_manager_processstation_properties.png"](media/task_manager_processstation_properties.png "task_manager_processstation_properties")
 
 3.  Select "This Account", enter the user information and click "Ok".
 
-![](media/image36.png){width="3.5652176290463693in"
-height="2.0497812773403323in"}
+!["task_manager_processstation_account.png"](media/task_manager_processstation_account.png "task_manager_processstation_account")
 
 ### Copy the customized configuration
 
@@ -1799,14 +1389,13 @@ Copy all custom files to the installation folder (C:\\Program Files
 
 19. Open "SmartDocumentor ServiceConfig".
 
-> ![](media/image37.png){width="0.8645833333333334in"
-> height="1.28125in"}
+> ![](media/ServiceConfig_sc.png)
 
 20. Go to "Data Source" tab.
 
 21. On the "Data Location" paste the SmartDocumentor configuration path.
 
-> ![](media/image38.png){width="3.077777777777778in" height="1.2in"}
+> ![](media/ServiceConfig_data_soutr.png)
 
 22. Click "Ok"
 
@@ -1818,8 +1407,7 @@ This step if not necessary if you have an unlimited license.
 
 2.  Go to "License". Copy the HDI value.
 
-> ![](media/image39.png){width="3.5820898950131235in"
-> height="1.7913298337707786in"}
+> ![](media/ServiceConfig_license.png)
 
 3.  Send the information to DevScope so they can generate a new license.
 
@@ -1827,108 +1415,90 @@ This step if not necessary if you have an unlimited license.
 
 1.  Open "SmartDocumentor ServiceConfig"
 
-```{=html}
-<!-- -->
-```
-23. Go to Tab "License" and click License Info
+2. Go to Tab "License" and click License Info
 
-> ![](media/image40.png){width="4.9in" height="2.3in"}
+> ![](media/ServiceConfig_license2.png)
 
-24. Select "Active using License File" and click "browse"
+3. Select "Active using License File" and click "browse"
 
-> ![](media/image41.png){width="4.647321741032371in"
-> height="3.6145833333333335in"}
+> ![](media/ServiceConfig_license_activation.png)
 
-25. Select the file and click "Active License"
+4. Select the file and click "Active License"
 
 ### Activate SmartDocumentor Plafond
 
-2.  Open "SmartDocumentor ServiceConfig"
+1.  Open "SmartDocumentor ServiceConfig"
 
-```{=html}
-<!-- -->
-```
-26. Go to Tab "License" and click Plafond Info
+2. Go to Tab "License" and click Plafond Info
 
-![](media/image42.png){width="3.6041666666666665in"
-height="4.0980993000874895in"}
+![](media/ServiceConfig_plafond.png)
 
-27. Click Browse, select the file and click "Active Plafond"
+3. Click Browse, select the file and click "Active Plafond"
 
-![](media/image43.png){width="5.041666666666667in"
-height="3.3164490376202975in"}
+![](media/ServiceConfig_license_activation.png)
 
 Alternatively, it's possible to get the plafond without the file.
 
-3.  Open "SmartDocumentor ServiceConfig"
+1.  Open "SmartDocumentor ServiceConfig"
 
-```{=html}
-<!-- -->
-```
-28. Go to Tab "Others" insert the Account Data supplied by our team and
+2. Go to Tab "Others" insert the Account Data supplied by our team and
     click Get Plafond
 
-> ![](media/image44.png){width="4.834008092738408in"
-> height="5.511185476815398in"}
+> ![](media/ServiceConfig_plafond_activate_get.png)
 
 Review and Scan Station Installation
 ------------------------------------
 
 ### Install Setup
 
-4.  Run the setup "SmartDocumentor-VERSION.exe" as administrator and
+1.  Run the setup "SmartDocumentor-VERSION.exe" as administrator and
     follow the wizard instructions
 
-![](media/image25.png){width="3.8464162292213473in"
-height="3.2395833333333335in"}
+![](media/install_setup.png)
 
-29. If any of the prerequisites is missing, the setup will detect and
+2. If any of the prerequisites is missing, the setup will detect and
     ask to install them:
 
-30. Microsoft .Net Framework 4.6.1
+3. Microsoft .Net Framework 4.6.1
 
-31. Microsoft Visual C++ 2010
+4. Microsoft Visual C++ 2010
 
-32. Microsoft Visual C++ 2012
+5. Microsoft Visual C++ 2012
 
-33. Microsoft Visual C++ 2013
+6. Microsoft Visual C++ 2013
 
-34. Microsoft Visual C++ 2015
+7. Microsoft Visual C++ 2015
 
-![](media/image26.png){width="4.635416666666667in"
-height="3.7083333333333335in"}
+![](media/install_setup2.png)
 
-35. You must select all prerequisites and restart the computer if
+8. You must select all prerequisites and restart the computer if
     necessary.
 
-![](media/image27.png){width="5.260416666666667in"
-height="4.041666666666667in"}
+![](media/install_setup3.png)
 
-36. Check accept the terms and conditions. Click "Next"
+9. Check accept the terms and conditions. Click "Next"
 
-![](media/image28.png){width="3.875in" height="3.2636548556430447in"}
+![](media/install_setup4.png)
 
-37. Choose the installation folder and click Next
+10. Choose the installation folder and click Next
 
-![](media/image29.png){width="4.5in" height="3.790051399825022in"}
+![](media/install_setup5.png)
 
-38. Choose the log folder and click Next
+11. Choose the log folder and click Next
 
-![](media/image30.png){width="4.483048993875766in"
-height="3.7757753718285216in"}
+![](media/install_setup6.png)
 
-39. Select the specific component. For example, for the Review Station:
+12. Select the specific component. For example, for the Review Station:
 
-![](media/image45.png){width="5.374689413823272in" height="4.53125in"}
+![](media/install_setup7_1.png)
 
-40. Click Install.
+13. Click Install.
 
-![](media/image32.png){width="4.46875in" height="3.7637314085739284in"}
+![](media/install_setup8.png)
 
-41. Click Close
+14. Click Close
 
-![](media/image33.png){width="4.034782370953631in"
-height="3.3982294400699913in"}
+![](media/install_setup9.png)
 
 ### Copy the customized configuration
 
@@ -1939,16 +1509,15 @@ Copy all custom files to the installation folder (C:\\Program Files
 
 1.  Open "SmartDocumentor ServiceConfig".
 
-> ![](media/image37.png){width="0.8645833333333334in"
-> height="1.28125in"}
+> ![](media/ServiceConfig_sc.png)
 
-42. Go to "Data Source" tab.
+2. Go to "Data Source" tab.
 
-43. On the "Data Location" paste the SmartDocumentor configuration path.
+3. On the "Data Location" paste the SmartDocumentor configuration path.
 
-> ![](media/image38.png){width="3.077777777777778in" height="1.2in"}
+> ![](media/ServiceConfig_data_soutr.png)
 
-44. Click "Ok"
+4. Click "Ok"
 
 ### Extract the HDI to generate the license
 
@@ -1956,30 +1525,25 @@ Note: This step if not necessary if you have an unlimited license.
 
 1.  Open "SmartDocumentor ServiceConfig"
 
-```{=html}
-<!-- -->
-```
-45. Go to "License". Copy the HDI value.
+2. Go to "License". Copy the HDI value.
 
-> ![](media/image39.png){width="3.5820898950131235in"
-> height="1.7913298337707786in"}
+> ![](media/ServiceConfig_license.png)
 
-46. Send the information to DevScope so they can generate a new license.
+3. Send the information to DevScope so they can generate a new license.
 
 ### Activate SmartDocumentor license
 
-47. Open "SmartDocumentor ServiceConfig"
+1. Open "SmartDocumentor ServiceConfig"
 
-48. Go to Tab "License" and click License Info
+2. Go to Tab "License" and click License Info
 
-> ![](media/image40.png){width="4.9in" height="2.3in"}
+> ![](media/ServiceConfig_license.png)
 
-49. Select "Active using License File" and click "browse"
+3. Select "Active using License File" and click "browse"
 
-> ![](media/image41.png){width="4.647321741032371in"
-> height="3.6145833333333335in"}
+> ![](media/ServiceConfig_license_activation.png)
 
-50. Select the file and click "Active License"
+4. Select the file and click "Active License"
 
 Update SmartDocumentor
 ----------------------
@@ -1990,47 +1554,40 @@ remove them before installing the new version.
 
 To install the version, follow these steps:
 
-51. Run the setup. Click "Next".
+1. Run the setup. Click "Next".
 
-![](media/image46.png){width="5.291666666666667in"
-height="4.4541097987751535in"}
+![](media/install_setup.png)
 
-52. In the next accept the terms
+2. In the next accept the terms
 
-> ![](media/image47.png){width="4.729166666666667in"
-> height="3.980640857392826in"}
+> ![](media/install_setup2.png)
 
-53. Change the installation folder if necessary.
+3. Change the installation folder if necessary.
 
-> ![](media/image48.png){width="4.635416666666667in"
-> height="3.869025590551181in"}
+> ![](media/install_setup3.png)
 
-54. Change the log folder if necessary.
+4. Change the log folder if necessary.
 
-![](media/image49.png){width="4.739583333333333in"
-height="3.9983267716535433in"}
+![](media/install_setup4.png)
 
-55. Choose the modules you want to install.
+5. Choose the modules you want to install.
 
-56. Computer with Scan Station: Choose Scan Station only
+6. Computer with Scan Station: Choose Scan Station only
 
-57. Computer with Review Station Choose Review Station only
+7. Computer with Review Station Choose Review Station only
 
-58. Computer with Process Station: Choose Process Station only
+8. Computer with Process Station: Choose Process Station only
 
-> ![](media/image50.png){width="4.46875in"
-> height="3.7262357830271218in"}
+> ![](media/install_setup7_2.png)
 
-59. Click "Install". The previous version will be installed
+9. Click "Install". The previous version will be installed
     automatically, and the new version will install after that.
 
-> ![](media/image51.png){width="4.239583333333333in"
-> height="3.5575798337707787in"}
+> ![](media/install_setup8.png)
 
-60. Wait until the installation is completed
+10. Wait until the installation is completed
 
-> ![](media/image52.png){width="5.03125in"
-> height="4.2390529308836395in"}
+> ![](media/install_setup9.png)
 
 Update SmartDocumentor Plugin
 -----------------------------
@@ -2040,13 +1597,10 @@ following steps:
 
 1.  Close all SmartDocumentor modules.
 
-```{=html}
-<!-- -->
-```
-61. Stop Windows service if the installation is begin performed in the
+2. Stop Windows service if the installation is begin performed in the
     server
 
-62. Copy all files sent to the installation folder: C:\\Program Files
+3. Copy all files sent to the installation folder: C:\\Program Files
     (x86)\\DevScope\\SmartDocumentor
 
 Troubleshooting Overview
@@ -2069,8 +1623,7 @@ any error that occurred during the processing.
 
 A file for each module will be created. Example:
 
-> ![](media/image53.png){width="3.1979166666666665in"
-> height="1.6145833333333333in"}
+> ![](media/log_folder.png)
 
 When an error occurs, this should be the first step to try to identify
 the error.
@@ -2082,11 +1635,11 @@ Database
 
 The SmartDocumentor solution contains the following tables:
 
-63. Tasks
+1. Tasks
 
-64. TasksHistory
+2. TasksHistory
 
-65. WorkspaceSettings
+3. WorkspaceSettings
 
 #### Tasks
 
@@ -2094,46 +1647,26 @@ The SmartDocumentor's Tasks table contains the current documents that
 are still being processed. The following table contains a description of
 all columns.
 
-+---------------+-----------------------------------------------------+
+
 | Column        | Description                                         |
-+===============+=====================================================+
+|---------------|-----------------------------------------------------|
 | ID            | Database unique identifier.                         |
-+---------------+-----------------------------------------------------+
-| TaskID        | Internal SmartDocumentor identifier. This           |
-|               | identifier will be present in the log files. This   |
-|               | helps to identify the error each task had.          |
-+---------------+-----------------------------------------------------+
+| TaskID        | Internal SmartDocumentor identifier. This identifier will be present in the log files. This helps to identify the error each task had.|
 | Workspace     | SmartDocumentor workspace internal identifier       |
-+---------------+-----------------------------------------------------+
 | Queue         | Current step on where the task is                   |
-+---------------+-----------------------------------------------------+
-| Priority      | Task priority. From 0 to 10. Can be chosen when     |
-|               | scanning a document. The default value is 5.        |
-+---------------+-----------------------------------------------------+
+| Priority      | Task priority. From 0 to 10. Can be chosen when scanning a document. The default value is 5.        |
 | BatchID       | Batch Id                                            |
-+---------------+-----------------------------------------------------+
 | BatchName     | Batch Name                                          |
-+---------------+-----------------------------------------------------+
 | DocID         | Document Id (within the batch)                      |
-+---------------+-----------------------------------------------------+
 | Pages         | Total pages                                         |
-+---------------+-----------------------------------------------------+
 | Task          | XML with the metadata information                   |
-+---------------+-----------------------------------------------------+
 | CreatedOn     | Creation date (UTC time zone)                       |
-+---------------+-----------------------------------------------------+
 | CreatedBy     | Created by                                          |
-+---------------+-----------------------------------------------------+
 | Expires       | Checkout Expiration Date (UTC time zone)            |
-+---------------+-----------------------------------------------------+
-| CheckOutState | Check out state                                     |
-|               |                                                     |
+| CheckOutState | Check out state:                                    |
 |               | -   C -- Checkout                                   |
-|               |                                                     |
 |               | -   R -- Reserved                                   |
-+---------------+-----------------------------------------------------+
 | CheckOutUser  | Checkout user. (Domain\\Username)                   |
-+---------------+-----------------------------------------------------+
 
 #### TasksHistory
 
@@ -2141,31 +1674,31 @@ The TasksHistory table contains all documents that were processed. The
 following table contains a description of all columns. After the output
 is generated, the task is moved to this table.
 
-  Column      Description
-  ----------- -------------------------------------------------
-  ID          Database unique identifier
-  TaskID      Internal SmartDocumentor identifier
-  Workspace   SmartDocumentor's workspace internal identifier
-  Priority    Task priority. From 0 to 10.
-  BatchID     Batch Id
-  BatchName   Batch Name
-  DocID       Document Id (within the batch)
-  Pages       Total pages
-  Task        XML with the metadata information
-  CreatedOn   Creation date (UTC time zone)
+  |Column      |Description|
+  |----------- |-------------------------------------------------|
+  |ID          |Database unique identifier|
+  |TaskID      |Internal SmartDocumentor identifier|
+  |Workspace   |SmartDocumentor's workspace internal identifier|
+  |Priority    |Task priority. From 0 to 10.|
+  |BatchID     |Batch Id|
+  |BatchName   |Batch Name|
+  |DocID       |Document Id (within the batch)|
+  |Pages       |Total pages|
+  |Task        |XML with the metadata information|
+  |CreatedOn   |Creation date (UTC time zone)|
 
 #### WorkspaceSettings
 
 This table contains all settings used on SmartDocumentor.
 
-  Column        Description
-  ------------- -------------------------------------
-  ID            Database unique identifier
-  WorkspaceId   Internal SmartDocumentor identifier
-  Key           Setting key
-  Value         Setting value
-  CreatedOn     Creation date (UTC time zone)
-  ModifiedOn    Modified date (UTC time zone)
+  |Column        |Description|
+  |------------- |-------------------------------------|
+  |ID            |Database unique identifier|
+  |WorkspaceId   |Internal SmartDocumentor identifier|
+  |Key           |Setting key|
+  |Value         |Setting value|
+  |CreatedOn     |Creation date (UTC time zone)|
+  |ModifiedOn    |Modified date (UTC time zone)|
 
 Currently, the only key we use is the batch Id sequence. The key value
 is "BatchId" and the value is the current batch id sequence. The format
@@ -2177,21 +1710,20 @@ day batch id sequence starting in 0001.
 The following table describes all states that are present in the
 SmartDocumentor's workflow
 
-  Queue Status   Description
-  -------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ToProcess      After the scan is completed. This is the workflow's first step.
-  ToReview       After the document is processed and the barcode is read. The SmartDocumentor's review station will only see documents that are in this step.
-  ToIntegrate    After the document is reviewed.
-  Deleted        When the document is deleted at the review station. The record on the database will not be deleted. We can keep this record on the database or create a Job to periodic delete these records or move to other location.
-  Final          When the output ( like XML, PDF or images) where generated and before is moved to another table.
-  Error          When an error occurred during the processing.
+  |Queue Status |  Description|
+  |---|---|
+  |ToProcess      |After the scan is completed. This is the workflow's first step.|
+  |ToReview       |After the document is processed and the barcode is read. The SmartDocumentor's review station will only see documents that are in this step.|
+  |ToIntegrate    |After the document is reviewed.|
+  |Deleted        |When the document is deleted at the review station. The record on the database will not be deleted. We can keep this record on the database or create a Job to periodic delete these records or move to other location.|
+  |Final          |When the output ( like XML, PDF or images) where generated and before is moved to another table.|
+  |Error          |When an error occurred during the processing.|
 
 ### SmartDocumentor Task XML
 
 An XML from SmartDocumentor looks like this:
 
-![](media/image54.png){width="5.905555555555556in"
-height="3.4291666666666667in"}
+![](media/task_xml.png)
 
 1.  The Property List - This is a list of key/values. The most important
     keys are:
@@ -2228,75 +1760,36 @@ height="3.4291666666666667in"}
 .
 
 ### Documents in Tasks
-
-SELECT
-
-TaskID,
-
-Task.value(\'(/Task/Document/\@ID)\[1\]\', \'varchar(MAX)\') AS
-DocumentId,
-
-Task,
-
-BatchID,
-
-BatchName,
-
-Task.value(\'(/Task/PropertyList/TaskProperty\[\@Name=\"ApplicationId\"\]/\@Value)\[1\]\',
-\'varchar(MAX)\') as ApplicationId,
-
-Task.value(\'(/Task/LastErrorMessage)\[1\]\', \'varchar(MAX)\') AS
-LastErrorMessage,
-
-Task.value(\'(/Task/Audit/SDTaskAudit\[\@To=\"Error\"\]/\@From)\[1\]\',
-\'varchar(MAX)\') AS LastSDTaskAudit,
-
-Task.value(\'(/Task/Audit/SDTaskAudit\[\@To=\"Error\"\]/\@Date)\[1\]\',
-\'varchar(MAX)\') AS LastSDTaskAuditDate
-
-FROM Tasks
-
-WHERE Queue = \'Error\'
-
-ORDER BY 5 
-
+````
+SELECT 
+	TaskID,
+	Task.value('(/Task/Document/@ID)[1]', 'varchar(MAX)') AS DocumentId,
+	Task,
+	BatchID,
+	BatchName,
+	Task.value('(/Task/PropertyList/TaskProperty[@Name="ApplicationId"]/@Value)[1]', 'varchar(MAX)') as ApplicationId,
+	Task.value('(/Task/LastErrorMessage)[1]', 'varchar(MAX)') AS LastErrorMessage,
+	Task.value('(/Task/Audit/SDTaskAudit[@To="Error"]/@From)[1]', 'varchar(MAX)') AS LastSDTaskAudit,
+	Task.value('(/Task/Audit/SDTaskAudit[@To="Error"]/@Date)[1]', 'varchar(MAX)') AS LastSDTaskAuditDate
+FROM Tasks 
+WHERE Queue = 'Error'
+ORDER BY 5 
+````
  This query returns the tasks that are in Error state on the database.
 The following table contains a description for all columns.
 
-+---------------------+-----------------------------------------------+
+
 | Result Column Name  | Description                                   |
-+=====================+===============================================+
+|---------------------|-----------------------------------------------|
 | TaskID              | Internal SmartDocumentor identifier           |
-+---------------------+-----------------------------------------------+
-| DocumentId          | The document identifier. This is the document |
-|                     | name that is on the SDDocs folder.            |
-+---------------------+-----------------------------------------------+
+| DocumentId          | The document identifier. This is the document name that is on the SDDocs folder. |
 | Task                | XML with all metadata information.            |
-+---------------------+-----------------------------------------------+
 | BatchID             | Batch Id.                                     |
-+---------------------+-----------------------------------------------+
 | BatchName           | Batch Name.                                   |
-+---------------------+-----------------------------------------------+
-| ApplicationId       | Application Id.                               |
-|                     |                                               |
-|                     | If an error occurs before the processing      |
-|                     | step, this will be NULL.                      |
-+---------------------+-----------------------------------------------+
-| LastErrorMessage    | The error message that put the task in error  |
-|                     | state. This can be NULL. When this is null,   |
-|                     | the error will be only on the log folder on   |
-|                     | the servers.                                  |
-+---------------------+-----------------------------------------------+
-| LastSDTaskAudit     | SmartDocumentor last step before the error.   |
-|                     |                                               |
-|                     | With this information, we know to each step   |
-|                     | we can recover the task.                      |
-|                     |                                               |
-|                     | ***See NOTE***                                |
-+---------------------+-----------------------------------------------+
-| LastSDTaskAuditDate | Last date and time SmartDocumentor processed  |
-|                     | this task.                                    |
-+---------------------+-----------------------------------------------+
+| ApplicationId       | Application Id. If an error occurs before the processing step, this will be NULL. |
+| LastErrorMessage    | The error message that put the task in error state. This can be NULL. When this is null, the error will be only on the log folder on the servers. |
+| LastSDTaskAudit     | SmartDocumentor last step before the error. With this information, we know to each step we can recover the task. **See NOTE**  |
+| LastSDTaskAuditDate | Last date and time SmartDocumentor processed this task.                                    |
 
 **NOTE:**
 
@@ -2310,25 +1803,19 @@ to update the task to that step so it can be reprocessed again. When
 running the queue state on the database, remove "workspace:" from the
 queue name. Example:
 
-![](media/image55.png){width="5.895833333333333in"
-height="1.6666666666666667in"}
+![](media/task_xml_audit.png)
 
 In this example, the previous step before the error was the
 "workspace:ToIntegrate". In this case we would recover to queue
 "ToIntegrate".
 
 #### Recover Query
-
+````
 UPDATE Tasks
-
-SET Queue = \' RECOVER\_STEP\'
-
-WHERE
-
-TaskID IN
-
+SET Queue = ' RECOVER_STEP'
+WHERE 
+TaskID IN 
 (
-
-\'ID.XML\'
-
+ 'ID.XML'
 )
+````
