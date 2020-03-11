@@ -7,31 +7,21 @@ SmartDocumentor - Technical Documentation
 
 DevScope
 
-Version 1.0
 
-17-02-2020
+|  #Version        | Date             | Changes          | Author          |
+| ---------------- |:----------------:|:----------------:|----------------:|
+| V 1.0            | 17-02-2020       | Initial Document |Luís Maia        |
 
- {#section .TOC-Heading}
-
-**\
-**
-
-Version
-
-  \#      Date         Changes            Author
-  ------- ------------ ------------------ -----------
-  V 1.0   17-02-2020   Initial Document   Luís Maia
                                           
 
 Contacts
 
-+----------+---------------------------+
-| DevScope | João Sousa                |
-|          |                           |
-|          | <joao.sousa@devscope.net> |
-|          |                           |
-|          | +315 966 380 757          |
-+----------+---------------------------+
+
+| DevScope | João Sousa                 |
+| ---      | ---                        |
+|          | <joao.sousa@devscope.net>  |
+|          | +315 966 380 757           |
+
 
 Copyright © DevScope
 
@@ -42,136 +32,136 @@ without prior from DevScope. Any entity with access to this document, is
 obliged to the\
 confidentiality of the same.
 
-Index {#index .TOC-Heading}
+Index
 =====
 
-[1. Introduction 5](#introduction)
+[1. Introduction ](#introduction)
 
-[1.1 Overview 5](#overview)
+[1.1 Overview ](#overview)
 
-[1.1.1 Scanning - Scan Station 6](#scanning---scan-station)
+[1.1.1 Scanning - Scan Station ](#scanning---scan-station)
 
-[1.1.2 Processing - Process Station 9](#processing---process-station)
+[1.1.2 Processing - Process Station ](#processing---process-station)
 
-[1.1.3 Review - Review Station 10](#review---review-station)
+[1.1.3 Review - Review Station ](#review---review-station)
 
-[1.1.4 Templates - Template Editor 11](#templates---template-editor)
+[1.1.4 Templates - Template Editor ](#templates---template-editor)
 
 [1.1.5 Management - Management Station
-14](#management---management-station)
+](#management---management-station)
 
-[1.1.6 SmartDocumentor's Assumptions 15](#smartdocumentors-assumptions)
+[1.1.6 SmartDocumentor's Assumptions ](#smartdocumentors-assumptions)
 
-[1.1.7 Workflow 16](#workflow)
+[1.1.7 Workflow ](#workflow)
 
 [1.2 Extensibility and future versions
-18](#extensibility-and-future-versions)
+](#extensibility-and-future-versions)
 
-[2. Customize SmartDocumentor 19](#customize-smartdocumentor)
+[2. Customize SmartDocumentor ](#customize-smartdocumentor)
 
-[2.1 Client Configuration 19](#client-configuration)
+[2.1 Client Configuration ](#client-configuration)
 
-[2.1.1 Service Configuration 19](#service-configuration)
+[2.1.1 Service Configuration ](#service-configuration)
 
-[2.1.2 Storage Configuration 20](#storage-configuration)
+[2.1.2 Storage Configuration ](#storage-configuration)
 
-[2.1.3 Plafond 20](#plafond)
+[2.1.3 Plafond ](#plafond)
 
-[2.2 Workflow 20](#workflow-1)
+[2.2 Workflow ](#workflow-1)
 
-[2.2.1 Workspace.config.xml 21](#workspace.config.xml)
+[2.2.1 Workspace.config.xml ](#workspace.config.xml)
 
-[2.2.2 Local Vs Global 22](#local-vs-global)
+[2.2.2 Local Vs Global ](#local-vs-global)
 
-[2.2.3 Scan Station 23](#scan-station)
+[2.2.3 Scan Station ](#scan-station)
 
-[2.2.4 Review Station 23](#review-station)
+[2.2.4 Review Station ](#review-station)
 
-[2.2.5 Process Station 25](#process-station)
+[2.2.5 Process Station ](#process-station)
 
-[2.3 Project Structure 26](#project-structure)
+[2.3 Project Structure ](#project-structure)
 
-[2.4 Workers 26](#workers)
+[2.4 Workers ](#workers)
 
-[2.4.1 SmartDocumentor 26](#smartdocumentor)
+[2.4.1 SmartDocumentor ](#smartdocumentor)
 
-[2.4.2 Custom Worker 27](#custom-worker)
+[2.4.2 Custom Worker ](#custom-worker)
 
-[2.5 Plugins 29](#plugins)
+[2.5 Plugins ](#plugins)
 
-[2.5.1 Scan Plugin 29](#scan-plugin)
+[2.5.1 Scan Plugin ](#scan-plugin)
 
-[2.5.2 Review Plugin 30](#review-plugin)
+[2.5.2 Review Plugin ](#review-plugin)
 
-[2.6 Debug 34](#debug)
+[2.6 Debug ](#debug)
 
-[3. Installation 35](#installation)
+[3. Installation ](#installation)
 
-[3.1 Checklist 35](#checklist)
+[3.1 Checklist ](#checklist)
 
-[3.1.1 Requirements 35](#requirements)
+[3.1.1 Requirements ](#requirements)
 
 [3.1.2 Firewall and Antivirus Exclusions (Servers & Clients)
-36](#firewall-and-antivirus-exclusions-servers-clients)
+](#firewall-and-antivirus-exclusions-servers-clients)
 
-[3.2 Server Installation 37](#server-installation)
+[3.2 Server Installation ](#server-installation)
 
-[3.2.1 Install Setup 37](#install-setup)
+[3.2.1 Install Setup ](#install-setup)
 
 [3.2.2 Change the user running the windows service
-41](#change-the-user-running-the-windows-service)
+](#change-the-user-running-the-windows-service)
 
 [3.2.3 Copy the customized configuration
-42](#copy-the-customized-configuration)
+](#copy-the-customized-configuration)
 
 [3.2.4 Configure the configuration path
-42](#configure-the-configuration-path)
+](#configure-the-configuration-path)
 
 [3.2.5 Extract the HDI to generate the license
-42](#extract-the-hdi-to-generate-the-license)
+](#extract-the-hdi-to-generate-the-license)
 
 [3.2.6 Activate SmartDocumentor license
-44](#activate-smartdocumentor-license)
+](#activate-smartdocumentor-license)
 
 [3.2.7 Activate SmartDocumentor Plafond
-45](#activate-smartdocumentor-plafond)
+](#activate-smartdocumentor-plafond)
 
 [3.3 Review and Scan Station Installation
-47](#review-and-scan-station-installation)
+](#review-and-scan-station-installation)
 
-[3.3.1 Install Setup 47](#install-setup-1)
+[3.3.1 Install Setup ](#install-setup-1)
 
 [3.3.2 Copy the customized configuration
-51](#copy-the-customized-configuration-1)
+](#copy-the-customized-configuration-1)
 
 [3.3.3 Configure the configuration path
-51](#configure-the-configuration-path-1)
+](#configure-the-configuration-path-1)
 
 [3.3.4 Extract the HDI to generate the license
-52](#extract-the-hdi-to-generate-the-license-1)
+](#extract-the-hdi-to-generate-the-license-1)
 
 [3.3.5 Activate SmartDocumentor license
-53](#activate-smartdocumentor-license-1)
+](#activate-smartdocumentor-license-1)
 
-[3.4 Update SmartDocumentor 54](#update-smartdocumentor)
+[3.4 Update SmartDocumentor ](#update-smartdocumentor)
 
-[3.5 Update SmartDocumentor Plugin 58](#update-smartdocumentor-plugin)
+[3.5 Update SmartDocumentor Plugin ](#update-smartdocumentor-plugin)
 
-[4. Troubleshooting Overview 59](#troubleshooting-overview)
+[4. Troubleshooting Overview ](#troubleshooting-overview)
 
-[4.1 Introduction 59](#introduction-1)
+[4.1 Introduction ](#introduction-1)
 
-[4.2 Log folder 59](#log-folder)
+[4.2 Log folder ](#log-folder)
 
-[4.3 Database 59](#database)
+[4.3 Database ](#database)
 
-[4.3.1 Tables 59](#tables)
+[4.3.1 Tables ](#tables)
 
-[4.3.2 Queue States 63](#queue-states)
+[4.3.2 Queue States ](#queue-states)
 
-[4.3.3 SmartDocumentor Task XML 64](#smartdocumentor-task-xml)
+[4.3.3 SmartDocumentor Task XML ](#smartdocumentor-task-xml)
 
-[4.3.4 Documents in Tasks 65](#documents-in-tasks)
+[4.3.4 Documents in Tasks ](#documents-in-tasks)
 
 Introduction
 ============
