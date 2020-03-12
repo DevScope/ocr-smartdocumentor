@@ -2,10 +2,13 @@
 layout: default
 title: Home
 ---
+![smartdocumentor.png](media/smartdocumentor.png "SmartDocumentor")
 
-SmartDocumentor - Technical Documentation
 
-DevScope
+[***View the Project on GitHub***](https://github.com/DevScope/ocr-smartdocumentor)
+***DevScope/ocr-smartdocumentor***
+
+# Technical Documentation
 
 
 |  #Version        | Date             | Changes          | Author          |
@@ -14,7 +17,7 @@ DevScope
 
                                           
 
-Contacts
+**Contacts**
 
 
 | DevScope | João Sousa                 |
@@ -25,12 +28,9 @@ Contacts
 
 Copyright © DevScope
 
-All information in this document is confidential and for the exclusive
-access of SmartDocumentor\
-customers. Access to this document is not permitted to any other entity
-without prior from DevScope. Any entity with access to this document, is
-obliged to the\
-confidentiality of the same.
+All information in this document is confidential and for the exclusive access of SmartDocumentor customers.
+Access to this document is not permitted to any other entity without prior from DevScope. 
+Any entity with access to this document, is obliged to the confidentiality of the same.
 
 Index
 =====
