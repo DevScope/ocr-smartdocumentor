@@ -12,7 +12,7 @@ title: Home
 
 
 |  #Version        | Date             | Changes          | Author          |
-| ---------------- |:----------------:|:----------------:|----------------:|
+| ---------------- |:----------------:|:----------------:|:---------------:|
 | V 1.0            | 17-02-2020       | Initial Document |Luís Maia        |
 
                                           
@@ -1103,6 +1103,14 @@ the class.
 15.		var locationId = customProperties[Constants.Settings.LocationId].ToString();
 16.	} 
 ````
+#### Workflow Sequence
+
+Next is possible to see how the sequence workflow when opening the review station and processing each file.
+
+The next diagram is a simplified version of the sequence diagram, showing the methods call in a more intuitive maner. 
+
+!["review.png"](media/review.png "Review Station Plugin")
+
 
 #### Template
 
