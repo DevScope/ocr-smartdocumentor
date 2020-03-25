@@ -18,7 +18,7 @@ The SmartDocumentor tools are a collection of samples designed to cover end-to-e
 
 | Release   | Description |
 |-----------------|--------------|
-| 3.2.1 | Add authentication |
+| 3.3.1 | Web Edge Provider |
 
 ## Requirements:
 **Pre-requisite:**
@@ -71,6 +71,7 @@ Scanner drivers to be used on machines using the Scan Module (SmartDocumentor.Sc
 
 ## How-To Install:
 
+### [See our documentation to get started](https://github.com/DevScope/ocr-smartdocumentor/wiki) 
 
 ## Reporting Security Issues
 Security issues and bugs should be reported privately, via email, to the DevScope Support Team at [support@devscope.net](mailto:support@devscope.net). You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. 
