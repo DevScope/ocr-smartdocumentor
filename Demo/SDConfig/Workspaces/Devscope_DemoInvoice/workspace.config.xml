@@ -104,6 +104,9 @@
           <SettingList>
             <Setting Name="OcrSavePageText" Value="False" />
             <Setting Name="PdfExtractTextWords" Value="True" />
+			      <Setting Name="OcrEngine" Value="Google" />
+			      <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
+            <Setting Name="OcrEngineCustomParams" Value=";True" />
           </SettingList>
         </Step>
         <Step From="OCRCompleted" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
