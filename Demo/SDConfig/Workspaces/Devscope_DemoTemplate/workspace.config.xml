@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="Devscope_DemoTemplate">
-  <Name>Demo Templates</Name>
-  <Description>Demo Templates</Description>
+  <Name>Template Demo</Name>
+  <Description>Template Demo</Description>
   <TaskStorage>DemoTemplate Tasks</TaskStorage>
   <DocStorage>DemoTemplate Docs</DocStorage>
   <LocalDocStorage>LocalDocs</LocalDocStorage>

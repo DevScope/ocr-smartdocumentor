@@ -8,7 +8,7 @@
   <LocalDocStorage>LocalDocs</LocalDocStorage>
   <LocalTasksPath>LocalTasks</LocalTasksPath>
   <TaskPromotedPropertyList>
-    <TaskPromotedProperty Name="FilterBatchName" Value="" Command="SELECT [BatchID], [BatchName], COUNT([DocID]) DocsCount, SUM([Pages]) TotalPages, MAX([Priority]) [Priority], DATEADD(MI, DATEDIFF(MI, GETUTCDATE(), GETDATE()), MIN(CreatedOn)) as CreatedOn FROM [dbo].[Tasks] WHERE [Queue] = 'ToReview' AND [Workspace] = 'Devscope_DemoInvoice' GROUP BY BatchID,BatchName ORDER BY MAX([Priority]) DESC, BatchName ASC" ColumnHeaders="REVIEW_STATION_TASK_BATCH_ID;REVIEW_STATION_TASK_BATCH_NAME;REVIEW_STATION_TASK_DOCS_COUNT;REVIEW_STATION_TASK_PAGES_SUM;REVIEW_STATION_TASK_PRIORITY;REVIEW_STATION_TASK_CREATEDON" Type="Database" />
+    <TaskPromotedProperty Name="FilterBatchName" Value="" Command="SELECT [BatchID], [BatchName], COUNT([ID]) DocsCount, SUM([Pages]) TotalPages, MAX([Priority]) [Priority], DATEADD(MI, DATEDIFF(MI, GETUTCDATE(), GETDATE()), MIN(CreatedOn)) as CreatedOn FROM [dbo].[Tasks] WHERE [Queue] = 'ToReview' AND [Workspace] = 'Devscope_DemoInvoice' GROUP BY BatchID,BatchName ORDER BY MAX([Priority]) DESC, BatchName ASC" ColumnHeaders="REVIEW_STATION_TASK_BATCH_ID;REVIEW_STATION_TASK_BATCH_NAME;REVIEW_STATION_TASK_DOCS_COUNT;REVIEW_STATION_TASK_PAGES_SUM;REVIEW_STATION_TASK_PRIORITY;REVIEW_STATION_TASK_CREATEDON" Type="Database" />
   </TaskPromotedPropertyList>
   <WorkstationConfigList>
     <WorkstationConfig Target="ScanStation">
@@ -70,12 +70,28 @@
       <StepList>
         <Step Using="FolderMonitorWorker" To="FileImportedFromFolder">
           <SettingList>
-            <Setting Name="Folders" Value="\\Localhost\GenericPluginDemo\Input\Invoices" />
+            <Setting Name="Folders" Value="\\localhost\GenericPluginDemo\DemoInvoice\Input" />
             <Setting Name="FilePatterns" Value="*.pdf|*.tif*" />
-            <Setting Name="TaskProperties" Value="_BatchName=Pasta" />
+            <Setting Name="TaskProperties" Value="_BatchName=PastaInput" />
+            <Setting Name="SearchTimerInterval" Value="30000" />
+            <Setting Name="InputFileDestination" Value="MoveToConnectionString" />
+            <Setting Name="MoveDocStorageConnectionString" Value="Provider=SDFilesystem;Path=\\localhost\GenericPluginDemo\DemoInvoice\Input_ARCHIVE;CredentialsMode=None;AuthProtocol=NTLM;IsPasswordSecure=True" />
           </SettingList>
         </Step>
-        <Step From="FileImportedFromFolder" Using="DocUploadWorker" To="DocFromFolderUploaded">
+        <Step From="FileImportedFromFolder" Using="DocumentPreProcessingWorker" To="PreProcessedCompleted">
+          <SettingList>
+            <Setting Name="AutoDeskew" Value="True" />
+            <Setting Name="CleanBlackBorders" Value="False" />
+            <Setting Name="AutoInvert" Value="False" />
+            <Setting Name="AutoDetectOrientation" Value="False" />
+            <Setting Name="ConvertToBitonal" Value="False" />
+            <Setting Name="Thickness" Value="0" />
+            <Setting Name="Noise" Value="0" />
+            <Setting Name="DPI" Value="300" />
+            <Setting Name="DeleteOriginalDocument" Value="True" />
+          </SettingList>
+        </Step>
+        <Step From="PreProcessedCompleted" Using="DocUploadWorker" To="DocFromFolderUploaded">
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
           <SettingList />
         </Step>
@@ -90,13 +106,23 @@
             <Setting Name="BufferSize" Value="5" />
           </SettingList>
         </Step>
-        <Step From="ToProcess" Using="ProcessInvoiceWorker" To="DocumentRecognized" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
+
+        <Step From="ToProcess" Using="OCRExtractionWorker" To="OCRCompleted">
+          <SettingList>
+            <Setting Name="OcrSavePageText" Value="False" />
+            <Setting Name="PdfExtractTextWords" Value="False" />
+          </SettingList>
+        </Step>
+
+        <Step From="OCRCompleted" Using="ProcessInvoiceWorker" To="DocumentRecognized" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
           <SettingList>
             <Setting Name="WebApiUrl" Value="" />
             <Setting Name="WebApiKey" Value="" />
             <Setting Name="WebApiSecret" Value="" />
-            <Setting Name="RemoveCalculatedFields" Value="True" />
+            <Setting Name="RemoveCalculatedFields" Value="False" />
             <Setting Name="CustomerFiscalNumber" Value="" />
+            <Setting Name="UseTaskOCR" Value="False" />
+            <Setting Name="UseOnlyFirstPage" Value="false" />
           </SettingList>
         </Step>
 
@@ -104,7 +130,7 @@
           <SettingList>
             <Setting Name="OcrSavePageText" Value="False" />
             <Setting Name="PdfExtractTextWords" Value="True" />
-			      <Setting Name="OcrEngine" Value="Google" />
+			      <Setting Name="OcrEngine" Value="" />
 			      <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
             <Setting Name="OcrEngineCustomParams" Value=";True" />
           </SettingList>
@@ -112,6 +138,7 @@
         <Step From="OCRCompleted" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
           <SettingList />
         </Step>
+
         <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ToReview">
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
           <SettingList />
@@ -137,6 +164,13 @@
           <SettingList />
         </Step>
         <Step From="Workspace:Final" Using="MoveTaskToHistoryWorker" To="Workspace:History">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="3" IntervalBetweenRetries="5" />
+          <SettingList>
+            <Setting Name="PropertiesToRemove" Value="_OcrPageModel_\d+|InvoiceData|InvoiceLearningContext|ExtractedFieldData|ReviewedEntities" />
+            <Setting Name="DocFileDestination" Value="Delete" />
+          </SettingList>
+        </Step>
+        <Step From="Workspace:Deleted2" Using="MoveTaskToHistoryWorker" To="Workspace:History">
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="3" IntervalBetweenRetries="5" />
           <SettingList>
             <Setting Name="PropertiesToRemove" Value="_OcrPageModel_\d+|InvoiceData|InvoiceLearningContext|ExtractedFieldData|ReviewedEntities" />
