@@ -130,8 +130,8 @@
           <SettingList>
             <Setting Name="OcrSavePageText" Value="False" />
             <Setting Name="PdfExtractTextWords" Value="True" />
-			      <Setting Name="OcrEngine" Value="" />
-			      <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
+            <Setting Name="OcrEngine" Value="" />
+            <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
             <Setting Name="OcrEngineCustomParams" Value=";True" />
           </SettingList>
         </Step>
