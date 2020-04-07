@@ -16,23 +16,48 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
 {
     public class ProcessDocumentWorker : BaseProcessDocumentWorker
     {
+        private int MinConfidence;
+        private string ConfidencePropertyName;
+        private bool ConfidenceEnabled;
+
         protected override void InitializeWorkerMain()
         {
             base.InitializeWorkerMain();
 
             // Custom
+            if (WorkerSettings.TryGetValue("MinConfidence", out string minConfidenceString))
+            {
+                if (!int.TryParse(minConfidenceString, out MinConfidence))
+                {
+                    throw new ArgumentException($"Invalid argument 'MinConfidence'. Value: '{minConfidenceString}'.");
+                }
+            }
+
+            if (WorkerSettings.TryGetValue("ConfidencePropertyName", out ConfidencePropertyName))
+            {
+            }
+
+            if (WorkerSettings.TryGetValue("ConfidenceEnabled", out string confidenceEnabledString))
+            {
+                if (!bool.TryParse(confidenceEnabledString, out ConfidenceEnabled))
+                {
+                    throw new ArgumentException($"Invalid argument 'ConfidenceEnabled'. Value: '{confidenceEnabledString}'.");
+                }
+            }
         }
 
         public override void ProcessItem(SDTask item)
         {
             base.ProcessItem(item);
 
-            this.ExtractTableData(item);
+            this.ExtractCustomTableData(item);
+
+            this.CheckConfidence(item);
 
             base.SetTaskData(item);
         }
 
-        private void ExtractTableData(SDTask item)
+        private void ExtractCustomTableData(SDTask item)
         {
             List<string> lines = new List<string>();
 
@@ -47,15 +72,33 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
                     {
                         var linha = regexResult.Groups["Linha"].ToString();
                         var codigo = regexResult.Groups["Codigo"].ToString();
-                        var descricao = ocrJobResult.TextLines[i + 1].Text; // O OCR está a partir a desc para a segunda linhas
 
-                        lines.Add(linha);
+                        lines.Add(codigo);
                     }
 
                 }
             }
 
             item.SetPropertyValue(Constants.Campos.CustomTable, SerializationHelper.SerializeCompress(lines));
+        }
+
+        private void CheckConfidence(SDTask item)
+        {
+            if (!ConfidenceEnabled)
+            {
+                return;
+            }
+
+            var confidenceAverage = this.ExtractedFieldList.Average(c => c.Entity?.Confidence ?? 0);
+            if (confidenceAverage > MinConfidence)
+            {
+                item.SetPropertyValue(ConfidencePropertyName, bool.TrueString);
+
+            }
+            else
+            {
+                item.SetPropertyValue(ConfidencePropertyName, bool.FalseString);
+            }
         }
     }
 }
