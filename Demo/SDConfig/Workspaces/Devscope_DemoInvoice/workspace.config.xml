@@ -136,12 +136,22 @@
           </SettingList>
         </Step>
         <Step From="OCRCompleted" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
-          <SettingList />
+          <SettingList >
+            <Setting Name="MinConfidence" Value="80" />
+            <Setting Name="ConfidencePropertyName" Value="ConfidenceCheck" />
+            <Setting Name="ConfidenceEnabled" Value="True" />
+          </SettingList>
         </Step>
 
-        <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ToReview">
+        <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ConfidenceCheck">
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
           <SettingList />
+        </Step>
+        <Step From="Workspace:ConfidenceCheck" Using="RouterWorker" To="Workspace:ToReview">
+          <SettingList>
+            <Setting Name="route:Integrate" Value="&quot;{ConfidenceCheck}&quot;==&quot;True&quot;" />
+            <Setting Name="route:Workspace:ToReview" Value="&quot;{ConfidenceCheck}&quot;==&quot;False&quot;" />
+          </SettingList>
         </Step>
         <Step From="Workspace:ToIntegrate" Using="RouterWorker" To="Integrated">
           <SettingList>
