@@ -45,6 +45,8 @@ namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
 
         protected override string DeleteConfirmationMessage { get { return "Tem a certeza que deseja eliminar ?"; } }
 
+        protected override bool RunOCROnSelectEntitiesByRegion { get { return false; } }
+
 #if DEBUG
         protected override bool LearningActive { get { return false; } }
 #else
