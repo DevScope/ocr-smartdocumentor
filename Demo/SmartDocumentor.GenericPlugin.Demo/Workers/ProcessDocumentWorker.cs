@@ -89,7 +89,7 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
                 return;
             }
 
-            var confidenceAverage = this.ExtractedFieldList.Average(c => c.Entity?.Confidence ?? 0);
+            var confidenceAverage = this.ExtractedFieldList.Select(c => c.Entity?.Confidence ?? 0).DefaultIfEmpty(0).Average();
             if (confidenceAverage > MinConfidence)
             {
                 item.SetPropertyValue(ConfidencePropertyName, bool.TrueString);
