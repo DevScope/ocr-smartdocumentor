@@ -106,14 +106,15 @@
             <Setting Name="BufferSize" Value="5" />
           </SettingList>
         </Step>
-
         <Step From="ToProcess" Using="OCRExtractionWorker" To="OCRCompleted">
           <SettingList>
             <Setting Name="OcrSavePageText" Value="False" />
-            <Setting Name="PdfExtractTextWords" Value="False" />
+            <Setting Name="PdfExtractTextWords" Value="True" />
+            <Setting Name="OcrEngine" Value="" />
+            <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
+            <Setting Name="OcrEngineCustomParams" Value=";True" />
           </SettingList>
         </Step>
-
         <Step From="OCRCompleted" Using="ProcessInvoiceWorker" To="DocumentRecognized" Assembly="SmartDocumentor.GenericPlugin" Namespace="SmartDocumentor.GenericPlugin.Workers">
           <SettingList>
             <Setting Name="WebApiUrl" Value="" />
@@ -125,33 +126,26 @@
             <Setting Name="UseOnlyFirstPage" Value="false" />
           </SettingList>
         </Step>
-
-        <Step From="DocumentRecognized" Using="OCRExtractionWorker" To="OCRCompleted">
-          <SettingList>
-            <Setting Name="OcrSavePageText" Value="False" />
-            <Setting Name="PdfExtractTextWords" Value="True" />
-            <Setting Name="OcrEngine" Value="" />
-            <!-- OcrEngineCustomParams: plafondPath; saveGoogleOcr; settingsGoogleOcrPageModelPrefixFieldName -->
-            <Setting Name="OcrEngineCustomParams" Value=";True" />
-          </SettingList>
-        </Step>
-        <Step From="OCRCompleted" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
+		<Step From="DocumentRecognized" Using="ProcessDocumentWorker" To="DocumentProcessed" Assembly="SmartDocumentor.GenericPlugin.Demo" Namespace="SmartDocumentor.GenericPlugin.Demo.Workers">
           <SettingList >
             <Setting Name="MinConfidence" Value="80" />
             <Setting Name="ConfidencePropertyName" Value="ConfidenceCheck" />
             <Setting Name="ConfidenceEnabled" Value="True" />
           </SettingList>
-        </Step>
-
+        </Step>		
         <Step From="DocumentProcessed" Using="TaskUploadWorker" To="Workspace:ConfidenceCheck">
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
           <SettingList />
         </Step>
-        <Step From="Workspace:ConfidenceCheck" Using="RouterWorker" To="Error">
+        <Step From="Workspace:ConfidenceCheck" Using="RouterWorker" To="ConfidenceCheckFailed">
           <SettingList>
-            <Setting Name="route:Integrate" Value="&quot;{ConfidenceCheck}&quot;==&quot;True&quot;" />
-            <Setting Name="route:Workspace:ToReview" Value="&quot;{ConfidenceCheck}&quot;==&quot;False&quot;" />
+			<Setting Name="route:Integrate" Value="&quot;{$ConfidenceCheck}&quot;==&quot;True&quot;" />
+            <Setting Name="route:Workspace:ToReview" Value="&quot;{$ConfidenceCheck}&quot;==&quot;False&quot;" />
           </SettingList>
+        </Step>
+		<Step From="ConfidenceCheckFailed" Using="TaskUploadWorker" To="Workspace:ToReview">
+          <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
+          <SettingList />
         </Step>
         <Step From="Workspace:ToIntegrate" Using="RouterWorker" To="Integrated">
           <SettingList>
