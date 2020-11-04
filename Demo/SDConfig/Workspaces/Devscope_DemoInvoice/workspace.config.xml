@@ -147,7 +147,7 @@
           <RetryPolicyConfig Type="RetryN" NumberOfRetries="5" IntervalBetweenRetries="5" />
           <SettingList />
         </Step>
-        <Step From="Workspace:ConfidenceCheck" Using="RouterWorker" To="Workspace:ToReview">
+        <Step From="Workspace:ConfidenceCheck" Using="RouterWorker" To="Error">
           <SettingList>
             <Setting Name="route:Integrate" Value="&quot;{ConfidenceCheck}&quot;==&quot;True&quot;" />
             <Setting Name="route:Workspace:ToReview" Value="&quot;{ConfidenceCheck}&quot;==&quot;False&quot;" />
