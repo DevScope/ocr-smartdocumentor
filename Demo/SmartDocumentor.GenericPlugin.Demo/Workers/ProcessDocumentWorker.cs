@@ -1,16 +1,10 @@
 ﻿using SmartDocumentor.Common.Serialization;
 using SmartDocumentor.Core.Schemas.Task;
-using SmartDocumentor.Core.Workers.Builtin;
 using SmartDocumentor.GenericPlugin.Demo.Base;
-using SmartDocumentor.GenericPlugin.Utils;
 using SmartDocumentor.GenericPlugin.Workers;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SmartDocumentor.GenericPlugin.Demo.Workers
 {
@@ -50,6 +44,10 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
         {
             base.ProcessItem(item);
 
+#if DEBUG
+            System.Diagnostics.Debugger.Launch();
+#endif
+
             this.ExtractCustomTableData(item);
 
             this.CheckConfidence(item);
@@ -75,7 +73,6 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
 
                         lines.Add(codigo);
                     }
-
                 }
             }
 
@@ -90,10 +87,10 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
             }
 
             var confidenceAverage = this.ExtractedFieldList.Select(c => c.Entity?.Confidence ?? 0).DefaultIfEmpty(0).Average();
+
             if (confidenceAverage > MinConfidence)
             {
                 item.SetPropertyValue(ConfidencePropertyName, bool.TrueString);
-
             }
             else
             {

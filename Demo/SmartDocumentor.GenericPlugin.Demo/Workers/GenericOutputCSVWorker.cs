@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SmartDocumentor.GenericPlugin.Demo.Workers
 {
@@ -16,7 +15,7 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
         public string OutputFolder;
         private string OutputFileName;
         public List<Field> Fields;
-        IDocumentsStorage GlobalStorage;
+        private IDocumentsStorage GlobalStorage;
         private bool GeneratePdf;
 
         protected override void InitializeWorkerMain()

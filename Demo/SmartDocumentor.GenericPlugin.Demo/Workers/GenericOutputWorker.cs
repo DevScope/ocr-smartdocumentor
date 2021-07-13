@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SmartDocumentor.GenericPlugin.Demo.Workers
 {
@@ -15,7 +14,7 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
     {
         public string OutputFolder;
         public List<Field> Fields;
-        IDocumentsStorage GlobalStorage;
+        private IDocumentsStorage GlobalStorage;
 
         protected override void InitializeWorkerMain()
         {
@@ -46,6 +45,10 @@ namespace SmartDocumentor.GenericPlugin.Demo.Workers
 
         public override void ProcessItem(SDTask item)
         {
+#if DEBUG
+            System.Diagnostics.Debugger.Launch();
+#endif
+
             var documentPath = Path.Combine(this.GlobalStorage.Connection.BasePath, item.Document.ID);
             var pdfFileName = Path.GetFileNameWithoutExtension(item.ID) + ".pdf";
 

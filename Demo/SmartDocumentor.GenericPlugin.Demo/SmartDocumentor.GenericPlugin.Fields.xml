@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Plugins>
-  <Plugin Id="Faturas">
-    <Fields>
-      <Field OrderId="1" Id="1" Type="Textbox" Label="NIF do fornecedor" Name="VendorVAT" Required="true" Visible="true" Enable="true" FieldType="Vat"/>
-      <Field OrderId="4" Id="4" Type="Textbox" Label="Nº Documento" Name="DocNumber" Required="false" Visible="true" Enable="true" NoNormalization="true"/>
+	<Plugin Id="Faturas">
+		<Fields>
+			<Field OrderId="1" Id="1" Type="Textbox" Label="NIF do fornecedor" Name="VendorVAT" Required="true" Visible="true" Enable="true" FieldType="Vat" />
+			<Field OrderId="4" Id="4" Type="Textbox" Label="Nº Documento" Name="DocNumber" Required="false" Visible="true" Enable="true" NoNormalization="true" />
 
-      <Field OrderId="6" Id="5" Type="Textbox" Label="Data de emissão" Name="DocDate" Required="false" Visible="true" Enable="true" FieldType="Date"/>
-      <Field OrderId="7" Id="32" Type="Textbox" Label="Data de vencimento" Name="DueDate1" Required="false" Visible="true" Enable="true"  FieldType="Date"/>
+			<Field OrderId="6" Id="5" Type="Textbox" Label="Data de emissão" Name="DocDate" Required="false" Visible="true" Enable="true" FieldType="Date" WatermarkText="dd/mm/aaaa" Pattern="^(?:(?:31(\/)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$" />
+			<Field OrderId="7" Id="32" Type="Textbox" Label="Data de vencimento" Name="DueDate1" Required="false" Visible="true" Enable="true"  FieldType="Date" WatermarkText="dd/mm/aaaa" Pattern="^(?:(?:31(\/)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$" />
 
-      <Field OrderId="13" Id="24" Type="Textbox" Label="Base Incidência" Name="TotalNet" Required="false" Visible="true" Enable="true" FieldType="Double"/>
-      <Field OrderId="14" Id="25" Type="Textbox" Label="Total Iva" Name="TotalVat" Required="false" Visible="true" Enable="true" FieldType="Double"/>
-      <Field OrderId="15" Id="30" Type="Textbox" Label="Total Documento" Name="Total" Required="false" Visible="true" Enable="true" FieldType="Double"/>
+			<Field OrderId="13" Id="24" Type="Textbox" Label="Base Incidência" Name="TotalNet" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="14" Id="25" Type="Textbox" Label="Total Iva" Name="TotalVat" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="15" Id="30" Type="Textbox" Label="Total Documento" Name="Total" Required="false" Visible="true" Enable="true" FieldType="Double" />
 
-      <Field OrderId="1006" Id="6" Type="Textbox" Label="Valor Base 1" Name="TaxBase1" Required="false" Visible="true" Enable="true" FieldType="Double"/>
-      <Field OrderId="1008" Id="8" Type="Textbox" Label="Valor Iva 1" Name="TaxValue1" Required="false" Visible="true" Enable="true" FieldType="Double"/>
-      <Field OrderId="1009" Id="9" Type="Textbox" Label="Valor Base 2" Name="TaxBase2" Required="false" Visible="true" Enable="true" FieldType="Double"/>
-      <Field OrderId="1011" Id="11" Type="Textbox" Label="Valor Iva 2" Name="TaxValue2" Required="false" Visible="true" Enable="true" FieldType="Double" />
-      <Field OrderId="1012" Id="12" Type="Textbox" Label="Valor Base 3" Name="TaxBase3" Required="false" Visible="true" Enable="true" FieldType="Double" />
-      <Field OrderId="1014" Id="14" Type="Textbox" Label="Valor Iva 3" Name="TaxValue3" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1006" Id="6" Type="Textbox" Label="Valor Base 1" Name="TaxBase1" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1008" Id="8" Type="Textbox" Label="Valor Iva 1" Name="TaxValue1" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1009" Id="9" Type="Textbox" Label="Valor Base 2" Name="TaxBase2" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1011" Id="11" Type="Textbox" Label="Valor Iva 2" Name="TaxValue2" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1012" Id="12" Type="Textbox" Label="Valor Base 3" Name="TaxBase3" Required="false" Visible="true" Enable="true" FieldType="Double" />
+			<Field OrderId="1014" Id="14" Type="Textbox" Label="Valor Iva 3" Name="TaxValue3" Required="false" Visible="true" Enable="true" FieldType="Double" />
 
-      <Field OrderId="1020" Id="109" Type="Textbox" Label="Custom" Name="Custom" Required="false" Visible="true" Enable="true" FieldType="Float"/>
+			<Field OrderId="1020" Id="109" Type="Textbox" Label="Custom" Name="Custom" Required="false" Visible="true" Enable="true" FieldType="Float" />
 
+			<Field OrderId="1500" Id="1002" Type="CheckBox" Label="Custom CheckBox" Name="Custom_CheckBox" Required="false" Visible="true" Enable="true" />
 
-      <Field OrderId="2000" Id="1001" Type="CustomSingleColumnGrid" Label="Table" Name="Custom_Table" Required="true" Visible="true" Enable="true" />
-    </Fields>
-  </Plugin>
+			<Field OrderId="2000" Id="1001" Type="CustomSingleColumnGrid" Label="Table" Name="Custom_Table" Required="true" Visible="true" Enable="true" />
+		</Fields>
+	</Plugin>
 </Plugins>
-
 
 <!--
 Field Types:
@@ -35,7 +35,6 @@ Field Types:
   Double
   Integer
   Vat
-
 
 Invoice Fields:
   VendorId = 0,
@@ -82,4 +81,3 @@ Invoice Fields:
   DueDate4 = 41,
   DueDiscount4 = 42
 -->
-

@@ -5,6 +5,29 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDocumentor.GenericPlugin.Demo", "SmartDocumentor.GenericPlugin.Demo.csproj", "{C3A3310B-35FC-4B5E-8FDF-6C684D15A78A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDConfig", "SDConfig", "{FC46ECE7-2AD4-4E5F-810A-C7AF6FFC0783}"
+	ProjectSection(SolutionItems) = preProject
+		..\SDConfig\service.config.xml = ..\SDConfig\service.config.xml
+		..\SDConfig\storage.config.xml = ..\SDConfig\storage.config.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workspaces", "Workspaces", "{80014D02-677B-40EF-9E01-14A123754F02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Devscope_DemoInvoice", "Devscope_DemoInvoice", "{79790836-7A6E-48AA-B2F2-624996229D61}"
+	ProjectSection(SolutionItems) = preProject
+		..\SDConfig\Workspaces\Devscope_DemoInvoice\workspace.config.xml = ..\SDConfig\Workspaces\Devscope_DemoInvoice\workspace.config.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Devscope_DemoTemplate", "Devscope_DemoTemplate", "{3ED05009-4B65-425F-945E-AA1CCE98BE28}"
+	ProjectSection(SolutionItems) = preProject
+		..\SDConfig\Workspaces\Devscope_DemoTemplate\workspace.config.xml = ..\SDConfig\Workspaces\Devscope_DemoTemplate\workspace.config.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{1C9E33C6-8913-45FD-92D4-C316587D1FFD}"
+	ProjectSection(SolutionItems) = preProject
+		..\SDConfig\Workspaces\Devscope_DemoTemplate\Templates\Devscope_DemoTemplate.frmtpl = ..\SDConfig\Workspaces\Devscope_DemoTemplate\Templates\Devscope_DemoTemplate.frmtpl
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +41,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80014D02-677B-40EF-9E01-14A123754F02} = {FC46ECE7-2AD4-4E5F-810A-C7AF6FFC0783}
+		{79790836-7A6E-48AA-B2F2-624996229D61} = {80014D02-677B-40EF-9E01-14A123754F02}
+		{3ED05009-4B65-425F-945E-AA1CCE98BE28} = {80014D02-677B-40EF-9E01-14A123754F02}
+		{1C9E33C6-8913-45FD-92D4-C316587D1FFD} = {3ED05009-4B65-425F-945E-AA1CCE98BE28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D2C62FE-21B7-4922-8583-6E8E3DEC568D}

@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SmartDocumentor.GenericPlugin.ReviewPlugin;
-using SmartDocumentor.GenericPlugin.Editors;
-using SmartDocumentor.GenericPlugin.Fields;
-using System.Globalization;
-using System.IO;
-using SmartDocumentor.Common.Util;
+﻿using SmartDocumentor.Common.Serialization;
+using SmartDocumentor.Core.Schemas.Task;
 using SmartDocumentor.GenericPlugin.Demo.Base;
 using SmartDocumentor.GenericPlugin.Demo.CustomFields;
-using SmartDocumentor.Common.Serialization;
+using SmartDocumentor.GenericPlugin.Editors;
+using SmartDocumentor.GenericPlugin.Fields;
 using SmartDocumentor.GenericPlugin.Fields.Form;
-using SmartDocumentor.Core.Schemas.Task;
+using SmartDocumentor.GenericPlugin.ReviewPlugin;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
 {
@@ -53,9 +45,10 @@ namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
         protected override bool LearningActive { get { return true; } }
 #endif
 
-        #endregion
+        #endregion Properties
 
         public GenericPlugin()
+            : base()
         {
         }
 
@@ -64,7 +57,6 @@ namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
         public override void SetCustomProperties(Dictionary<string, object> customProperties)
         {
             base.SetCustomProperties(customProperties);
-
         }
 
         protected override ICaptureFieldEditor CreateCaptureField(Field field)
@@ -126,7 +118,6 @@ namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
 
                     if (!string.IsNullOrWhiteSpace(tempValue))
                     {
-
                         lines.Add(tempValue);
                     }
                 }
@@ -145,19 +136,8 @@ namespace SmartDocumentor.GenericPlugin.Demo.ReviewPlugin
         public override void SetActiveContext(SDTask task)
         {
             base.SetActiveContext(task);
-
-            task.SetPropertyValue("ReviewAction", "");
-
-            if (this.FieldsMapByFieldName.ContainsKey(Constants.Campos.VendorVAT))
-            {
-                // Forçar o focus inicial no primeiro campo
-                var field = this.FieldsMapByFieldName[Constants.Campos.VendorVAT] as SDTextBox;
-                field.Focus();
-                field.TextBox.Focus();
-                SmartFieldUserControl_OnHighlightEntity(field, field.Entity);
-            }
         }
 
-        #endregion
+        #endregion Method
     }
 }

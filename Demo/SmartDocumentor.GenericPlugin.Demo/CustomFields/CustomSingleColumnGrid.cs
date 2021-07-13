@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using SmartDocumentor.Common.Serialization;
 using SmartDocumentor.GenericPlugin.Editors;
 using SmartDocumentor.ImageProcessing.Tools.UI;
 using SmartDocumentor.Invoices.Common;
-using SmartDocumentor.Common.Serialization;
-using System.Xml;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SmartDocumentor.GenericPlugin.Demo.CustomFields
 {
@@ -36,12 +30,12 @@ namespace SmartDocumentor.GenericPlugin.Demo.CustomFields
         }
 
         public new string Text { get; set; }
-        string _errorMessage;
-        string _fieldValue;
-        string _valueOnFocus;
-        bool _isFieldValue;
-        bool _hasChanges;
-        bool _ignoreTextBoxTextChangedEvent;
+        private string _errorMessage;
+        private string _fieldValue;
+        private string _valueOnFocus;
+        private bool _isFieldValue;
+        private bool _hasChanges;
+        private bool _ignoreTextBoxTextChangedEvent;
 
         public bool SuspendOnValueChangeEvents { get; set; }
 
@@ -235,7 +229,6 @@ namespace SmartDocumentor.GenericPlugin.Demo.CustomFields
 
                 this.gridView.NotifyCurrentCellDirty(true);
                 this.gridView.RefreshEdit();
-
             }
         }
 
